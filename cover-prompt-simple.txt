@@ -1,0 +1,17 @@
+Create a minimalist, Notion-style cover image for an academic paper analyzer tool.
+
+Visual elements:
+- An open book or academic paper in the center
+- Clean, simple icons floating around it: a clock (representing "5 minutes"), a chart/graph icon, text symbols
+- Chinese text "论文速读" (Paper Speed Reading) as the main title
+- Chinese subtitle "5分钟精炼分享" (5-Minute Refined Sharing)
+
+Style:
+- Minimal, clean Notion aesthetic
+- Flat design with no gradients
+- Color scheme: Deep gray (#2C2C2C) for text, soft blue (#5B9BD5) accents, off-white background (#F7F7F5)
+- Plenty of white space
+- 16:9 aspect ratio for GitHub README banner
+- Professional but approachable
+
+The overall feel should be clean, modern, and emphasize the "5-minute reading" concept.
