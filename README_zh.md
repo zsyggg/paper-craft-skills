@@ -1,5 +1,11 @@
 # 📚 Academic Paper Analyzer - 学术论文 5 分钟速读分析器
 
+<div align="center">
+
+[English](README.md) | [中文](README_zh.md)
+
+</div>
+
 > 基于 MinerU Cloud API 的高精度论文解析工具
 > 将学术论文转化为精炼、流畅的技术文章
 > **适合学术汇报、论文分享、快速掌握前沿研究**
@@ -26,37 +32,42 @@
 
 ## 🚀 快速开始
 
-### 安装依赖
+### 前置准备
 
+1. 安装依赖：
 ```bash
 pip install requests markdown
 ```
 
-### 获取 MinerU API Token
+2. 获取 MinerU API Token：
+   - 访问 [MinerU 官网](https://mineru.net) 注册账号
+   - 获取 API Token
+   - 设置环境变量：
+     ```bash
+     export MINERU_TOKEN="your_token_here"
+     ```
 
-1. 访问 [MinerU 官网](https://mineru.net) 注册账号
-2. 获取 API Token
-3. 设置环境变量（推荐）：
+### 作为 Claude Code Skill 使用
 
-```bash
-export MINERU_TOKEN="your_token_here"
+本工具设计为 **Claude Code Skill**，只需告诉 Claude：
+
+```
+请帮我分析这篇论文：/path/to/paper.pdf
 ```
 
-### 基本使用
+或者：
 
-```bash
-# 第一步：解析 PDF
-python scripts/mineru_api.py paper.pdf ./output
-
-# 第二步：提取论文信息
-python scripts/extract_paper_info.py ./output/*.md paper_info.json
-
-# 第三步：由 Claude 智能生成文章（在 Claude Code 中执行）
-# 阅读 paper_info.json 和 Markdown 文件，按照写作范式生成文章
-
-# 第四步（可选）：生成 HTML 版本
-python scripts/generate_html.py article.md output.html
 ```
+帮我为这篇学术论文生成一篇 5 分钟速读文章
+```
+
+Claude 会自动：
+1. ✅ 使用 MinerU API 解析 PDF
+2. ✅ 提取论文结构、图表、公式
+3. ✅ 按照写作范式生成自然流畅的文章
+4. ✅ 输出 Markdown 格式（可选 HTML）
+
+**无需手动执行任何命令！** Skill 会自动处理所有步骤。
 
 ## 📖 使用案例
 

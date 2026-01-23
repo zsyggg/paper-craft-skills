@@ -1,5 +1,11 @@
 # 📚 Academic Paper Analyzer - 5-Minute Paper Reading Tool
 
+<div align="center">
+
+[English](README.md) | [中文](README_zh.md)
+
+</div>
+
 > High-precision paper parsing powered by MinerU Cloud API
 > Transform academic papers into concise, fluent technical articles
 > **Perfect for academic presentations, paper sharing, and quick research understanding**
@@ -26,43 +32,48 @@
 
 ## 🚀 Quick Start
 
-### Install Dependencies
+### Prerequisites
 
+1. Install dependencies:
 ```bash
 pip install requests markdown
 ```
 
-### Get MinerU API Token
+2. Get your MinerU API Token:
+   - Visit [MinerU Official Site](https://mineru.net) to register
+   - Obtain your API Token
+   - Set environment variable:
+     ```bash
+     export MINERU_TOKEN="your_token_here"
+     ```
 
-1. Visit [MinerU Official Site](https://mineru.net) to register
-2. Obtain your API Token
-3. Set environment variable (recommended):
+### Usage as Claude Code Skill
 
-```bash
-export MINERU_TOKEN="your_token_here"
+This tool is designed as a **Claude Code Skill**. Simply tell Claude:
+
+```
+Please analyze this paper: /path/to/paper.pdf
 ```
 
-### Basic Usage
+Or:
 
-```bash
-# Step 1: Parse PDF
-python scripts/mineru_api.py paper.pdf ./output
-
-# Step 2: Extract paper metadata
-python scripts/extract_paper_info.py ./output/*.md paper_info.json
-
-# Step 3: Generate article with Claude (in Claude Code)
-# Read paper_info.json and Markdown files, generate article following the writing paradigm
-
-# Step 4 (Optional): Generate HTML version
-python scripts/generate_html.py article.md output.html
 ```
+Help me create a 5-minute reading article for this academic paper
+```
+
+Claude will automatically:
+1. ✅ Parse the PDF using MinerU API
+2. ✅ Extract paper structure, figures, and formulas
+3. ✅ Generate a natural, fluent article following the writing paradigm
+4. ✅ Output in Markdown format (HTML optional)
+
+**No manual commands needed!** The skill handles everything for you.
 
 ## 📖 Example Case
 
 Check out the [Engram Paper Analysis Example](examples/Engram_Analysis) to see the complete analysis effect.
 
-This case demonstrates how to transform a complex deep learning paper into:
+This example demonstrates how to transform a complex deep learning paper into:
 - ⚡ 30-second overview
 - 🎯 Core problem and solution
 - 📊 Key experimental results
@@ -124,11 +135,6 @@ a lookup table...
 - Embedded images (base64)
 - Single-file sharing
 - Great for preview and sharing
-
-```bash
-# Generate HTML version
-python scripts/generate_html.py article.md output.html
-```
 
 ## 🛠️ Technical Architecture
 
@@ -198,13 +204,7 @@ python scripts/generate_html.py article.md output.html
 
 ## 🎓 Best Practices
 
-### 1. Save Context
-- ✅ Trust metadata in `paper_info.json`
-- ✅ Reference image paths directly, don't read repeatedly
-- ✅ Only examine 1-2 core architecture diagrams
-- ❌ Don't repeatedly read all image files
-
-### 2. Writing Style
+### 1. Writing Style
 - ✅ Natural paragraph narration, like storytelling
 - ✅ Start from intuition and problems
 - ✅ Vivid metaphors and simple examples
@@ -212,13 +212,19 @@ python scripts/generate_html.py article.md output.html
 - ❌ Avoid AI clichés ("delve into", "crucial", "in the domain of")
 - ❌ Avoid mechanical section titles
 
-### 3. Image Usage
+### 2. Image Usage
 - ✅ Use extracted images for formulas, not LaTeX syntax
 - ✅ Use screenshots for result tables, more accurate than reformatting
 - ✅ Explain every key figure
 - ❌ Don't just paste 1-2 framework diagrams
 
-## 📚 Script Reference
+### 3. Context Saving
+- ✅ Trust metadata in `paper_info.json`
+- ✅ Reference image paths directly, don't read repeatedly
+- ✅ Only examine 1-2 core architecture diagrams
+- ❌ Don't repeatedly read all image files
+
+## 📚 Scripts Reference
 
 | Script | Function | Purpose |
 |--------|----------|---------|
@@ -226,6 +232,8 @@ python scripts/generate_html.py article.md output.html
 | `convert_pdf.py` | Local PDF conversion | Alternative, requires PyMuPDF |
 | `extract_paper_info.py` | Extract paper metadata | Generate structured paper info |
 | `generate_html.py` | Markdown → HTML | Generate HTML with base64 embedded images |
+
+*Note: When using as a Claude Code Skill, these scripts are called automatically by Claude.*
 
 ## ⚠️ Notes
 
@@ -236,9 +244,9 @@ python scripts/generate_html.py article.md output.html
 
 ### Usage Tips
 - Prefer MinerU API for highest accuracy
-- Don't output analysis process, only the final article
-- Avoid bullet lists, use natural paragraphs
-- Select 3-5 key figures
+- The skill automatically handles the entire workflow
+- Generated articles follow the natural storytelling paradigm
+- Select 3-5 key figures for illustration
 
 ## 🔗 Related Links
 
