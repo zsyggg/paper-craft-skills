@@ -1,240 +1,96 @@
-# Academic Paper Analyzer
+# paper-craft-skills
 
-<div align="center">
+English | [中文](./README.zh.md)
 
-[English](README.md) | [中文](README_zh.md)
+Claude Code skills for academic papers: deep analysis, comics, summaries and more.
 
-![Hero Banner](images/hero_banner.png)
+## Installation
 
-**Transform academic papers into deep technical articles with customizable styles**
+### Quick Install (Recommended)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://python.org)
+```bash
+npx skills add zsyggg/paper-craft-skills
+```
 
-</div>
+### Manual Install
+
+Simply tell Claude Code:
+
+> Please install skills from github.com/zsyggg/paper-craft-skills
+
+## Available Skills
+
+| Skill | Description | Status |
+|-------|-------------|--------|
+| [paper-analyzer](#paper-analyzer) | Transform papers into readable articles with multiple styles | ✅ Available |
+| [paper-comic](#paper-comic) | Generate educational comics from papers | 🚧 Coming Soon |
 
 ---
 
-## Features
+## paper-analyzer
 
-### Three Writing Styles
+Transform academic papers into deep technical articles with customizable styles.
 
-![Writing Styles Comparison](images/styles_comparison.png)
+![Hero Banner](skills/paper-analyzer/images/hero_banner.png)
 
-Choose the style that best fits your audience:
+### Features
 
-| Style | Description | Best For |
-|-------|-------------|----------|
-| **storytelling** | Start from intuition, use metaphors, like telling a story to a friend | Tech blogs, WeChat articles, general audience |
-| **academic** | Professional terminology, rigorous structure, preserves original concepts | Research reports, paper reviews, academic sharing |
-| **concise** | Direct to the point, tables and lists, high information density | Quick overview, technical survey, busy readers |
-
-<details>
-<summary><b>See style examples</b></summary>
-
-**Storytelling style:**
-> Have you ever thought about this: when we ask ChatGPT "What's the capital of China?", how does it know the answer? Intuitively, we might think the model "remembers" this knowledge. But actually, LLMs don't have a "memory module" — all answers are **computed**...
-
-**Academic style:**
-> This paper proposes Engram, a conditional memory architecture based on scalable lookup. The method integrates N-gram retrieval with Transformer backbone, achieving O(1) complexity for static knowledge acquisition while preserving dynamic reasoning capabilities...
-
-**Concise style:**
-> | Component | Function | Complexity |
-> |-----------|----------|------------|
-> | N-gram retrieval | Hash mapping to embedding table | O(1) |
-> | Context gating | Hidden state determines adoption | O(d) |
-> | Residual fusion | Add to backbone network | O(d) |
-
-[View complete examples →](examples/style_comparison)
-
-</details>
-
-### Formula Explanation (Optional)
-
-![Formula Feature](images/formula_feature.png)
-
-When enabled, the tool will:
-- Insert formula images extracted from the paper
-- Provide detailed symbol explanations
-- Connect formulas to intuitive understanding
-
-<details>
-<summary><b>Example: Formula explanation in action</b></summary>
-
-```markdown
-The gating mechanism is computed as:
-
-![Gating Formula](images/formula_gating.png)
-
-**Symbol breakdown:**
-- g_t: gating scalar (0-1), controls how much memory to use
-- h_t: current hidden state (already aggregated global context)
-- e_t: retrieved embedding from memory table
-- σ: sigmoid function, squashes output to [0,1]
-
-**Intuition:** When the retrieved memory conflicts with current context
-(e.g., discussing tech companies but retrieved "apple" as fruit),
-the gate closes (g_t → 0), suppressing the noise.
-```
-
-</details>
-
-### GitHub Code Analysis (Optional)
-
-![Code Analysis Feature](images/code_feature.png)
-
-When the paper has an open-source implementation:
-- Clone the repository automatically
-- Extract key source code snippets
-- Align code with paper concepts
-- Show implementation details
-
-<details>
-<summary><b>Example: Code-paper alignment</b></summary>
-
-```markdown
-## Implementation: N-gram Hash Retrieval
-
-The paper describes the hash function as "multi-head hashing to reduce collision".
-Here's the actual implementation:
-
-​```python
-# From engram/layers/memory.py
-class EngramMemory(nn.Module):
-    def __init__(self, num_heads=4, embed_dim=4096, table_size=100_000_000):
-        self.hash_weights = nn.Parameter(torch.randn(num_heads, 3, embed_dim))
-        self.embedding_tables = nn.ParameterList([
-            nn.Parameter(torch.randn(table_size, embed_dim // num_heads))
-            for _ in range(num_heads)
-        ])
-
-    def forward(self, ngram_ids):
-        # Multi-head hashing: each head uses different hash function
-        embeddings = []
-        for h in range(self.num_heads):
-            idx = self.hash_fn(ngram_ids, self.hash_weights[h])
-            embeddings.append(self.embedding_tables[h][idx])
-        return torch.cat(embeddings, dim=-1)
-​```
-
-**Key insight:** The multi-head design ensures that even if one hash function
-produces a collision, others likely won't, improving overall retrieval quality.
-```
-
-</details>
-
-### High-Precision PDF Parsing
-
-Powered by **MinerU Cloud API**:
-- Industry-leading PDF parsing accuracy
-- Complete extraction of images, tables, and LaTeX formulas
-- Smart recognition of paper structure and metadata
-- Supports PDF, DOC, PPT, and images (max 200MB, 600 pages)
-
-## Quick Start
-
-### Prerequisites
-
-```bash
-pip install requests markdown
-```
-
-### Get MinerU API Token
-
-1. Visit [MinerU Official Site](https://mineru.net) to register
-2. Get your API token from dashboard
-3. Set environment variable:
-   ```bash
-   export MINERU_TOKEN="your_token_here"
-   ```
+| Feature | Description |
+|---------|-------------|
+| **3 Writing Styles** | storytelling (narrative) / academic (formal) / concise (dense) |
+| **Formula Explanation** | Insert formula images with symbol breakdown |
+| **Code Analysis** | Align paper concepts with GitHub source code |
+| **High-Precision Parsing** | MinerU Cloud API for PDF/images/tables/LaTeX |
 
 ### Usage
-
-Simply tell Claude Code:
 
 ```
 Please analyze this paper: /path/to/paper.pdf
 ```
 
-Claude will guide you through:
-
-1. **Style selection**: storytelling / academic / concise
+Claude will ask you to choose:
+1. **Style**: academic (default) / storytelling / concise
 2. **Formula explanation**: yes / no
 3. **Code analysis**: yes / no (if GitHub repo detected)
-
-Then automatically generate the article with extracted images.
-
-## Examples
-
-All examples use the same paper: **Engram** (DeepSeek-AI, 2025)
 
 ### Style Comparison
 
 Same paper in three different styles:
 
-| Style | Lines | Images | Description |
-|-------|-------|--------|-------------|
-| [**academic**](examples/style_comparison/academic.md) | ~180 | 6 | Formal, structured (default) |
-| [storytelling](examples/style_comparison/storytelling.md) | ~200 | 6 | Narrative, metaphors |
-| [concise](examples/style_comparison/concise.md) | ~110 | 6 | Tables, bullet points |
+| Style | Description | Example |
+|-------|-------------|---------|
+| **academic** | Formal, structured (default) | [View](skills/paper-analyzer/examples/style_comparison/academic.md) |
+| storytelling | Narrative, metaphors | [View](skills/paper-analyzer/examples/style_comparison/storytelling.md) |
+| concise | Tables, bullet points | [View](skills/paper-analyzer/examples/style_comparison/concise.md) |
 
 ### Optional Features
 
-| Feature | Example | Description |
-|---------|---------|-------------|
-| Formula Explanation | [academic + formulas](examples/with_formulas/academic_formulas.md) | Insert formula images with symbol explanations |
-| Code Analysis | [academic + code](examples/with_code/academic_code.md) | Clone repo, show key source code |
+| Feature | Example |
+|---------|---------|
+| Formula Explanation | [academic + formulas](skills/paper-analyzer/examples/with_formulas/academic_formulas.md) |
+| Code Analysis | [academic + code](skills/paper-analyzer/examples/with_code/academic_code.md) |
 
-[View all examples →](examples/)
+### Prerequisites
 
-## Output Formats
-
-| Format | Description | Use Case |
-|--------|-------------|----------|
-| **Markdown** (default) | Lightweight, easy to edit | WeChat articles, blogs |
-| **HTML** (optional) | Base64 embedded images, single file | Preview, sharing |
-
-Generate HTML after Markdown:
 ```bash
-python scripts/generate_html.py article.md article.html
+pip install requests markdown
+export MINERU_TOKEN="your_token_here"  # Get from https://mineru.net
 ```
 
-## Architecture
+---
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  PDF Paper  │────▶│ MinerU API  │────▶│   Markdown  │
-└─────────────┘     └─────────────┘     │  + Images   │
-                                        └──────┬──────┘
-                                               │
-                    ┌──────────────────────────┼──────────────────────────┐
-                    ▼                          ▼                          ▼
-            ┌───────────────┐          ┌───────────────┐          ┌───────────────┐
-            │  storytelling │          │   academic    │          │    concise    │
-            │    Style      │          │    Style      │          │    Style      │
-            └───────────────┘          └───────────────┘          └───────────────┘
-                    │                          │                          │
-                    └──────────────────────────┼──────────────────────────┘
-                                               ▼
-                                    ┌─────────────────────┐
-                                    │  Article + Images   │
-                                    │  (MD / HTML)        │
-                                    └─────────────────────┘
-```
+## paper-comic
 
-## Scripts
+🚧 **Coming Soon**
 
-| Script | Purpose |
-|--------|---------|
-| `scripts/mineru_api.py` | MinerU Cloud API for PDF parsing |
-| `scripts/extract_paper_info.py` | Extract paper metadata (title, authors, etc.) |
-| `scripts/generate_html.py` | Convert Markdown to HTML with embedded images |
+Generate educational comics from academic papers, explaining innovations and background in visual storytelling format.
 
-## Links
+Planned features:
+- Multiple comic styles (Logicomix, manga guide, etc.)
+- Panel-by-panel breakdown of paper concepts
+- Character-driven explanations
 
-- [MinerU](https://mineru.net) - PDF parsing API
-- [Examples](examples/) - Sample outputs
-- [Style Guides](styles/) - Writing style definitions
+---
 
 ## License
 
