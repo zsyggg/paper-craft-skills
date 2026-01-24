@@ -1,4 +1,4 @@
-# 📚 Academic Paper Analyzer - 5-Minute Paper Reading Tool
+# Academic Paper Analyzer
 
 <div align="center">
 
@@ -6,31 +6,32 @@
 
 </div>
 
-> High-precision paper parsing powered by MinerU Cloud API
-> Transform academic papers into concise, fluent technical articles
-> **Perfect for academic presentations, paper sharing, and quick research understanding**
+> Transform academic papers into deep technical articles with customizable styles
+> High-precision parsing powered by MinerU Cloud API
+> **Multiple writing styles, optional formula explanation, GitHub code analysis**
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-green.svg)
 
-## ✨ Key Features
+## Key Features
 
-### 🎯 5-Minute Reading Experience
-- **Concise Content**: Distill lengthy papers into 5-minute readable technical articles
-- **Natural Narrative**: Replace rigid academic language with storytelling approach
-- **Intuition First**: Start from problems and intuition, not technical jargon
+### Multiple Writing Styles
+| Style | Description | Best For |
+|-------|-------------|----------|
+| **storytelling** | Intuitive, metaphors, like telling a story | Blogs, social media, general audience |
+| **academic** | Professional terminology, rigorous | Academic reports, research sharing |
+| **concise** | Direct, high information density | Quick overview, technical survey |
 
-### 🔬 High-Precision Parsing
+### Optional Enhancements
+- **Formula Explanation**: Insert formula images with detailed symbol explanations
+- **GitHub Code Analysis**: Clone repo, show key source code, code-paper alignment
+
+### High-Precision Parsing
 - **MinerU Cloud API**: Industry-leading PDF parsing accuracy
-- **Complete Extraction**: Images, tables, and LaTeX formulas - nothing missed
+- **Complete Extraction**: Images, tables, and LaTeX formulas
 - **Smart Recognition**: Automatically extract paper structure and metadata
 
-### 📝 Professional Writing Paradigm
-- **Share-Ready**: Perfect for academic presentations, blog posts, and technical sharing
-- **Logical Progression**: From simple to complex, layer by layer
-- **Vivid Metaphors**: Make abstract concepts concrete and understandable
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -41,7 +42,6 @@ pip install requests markdown
 
 2. Get your MinerU API Token:
    - Visit [MinerU Official Site](https://mineru.net) to register
-   - Obtain your API Token
    - Set environment variable:
      ```bash
      export MINERU_TOKEN="your_token_here"
@@ -49,222 +49,93 @@ pip install requests markdown
 
 ### Usage as Claude Code Skill
 
-This tool is designed as a **Claude Code Skill**. Simply tell Claude:
+Simply tell Claude:
 
 ```
 Please analyze this paper: /path/to/paper.pdf
 ```
 
-Or:
+Claude will ask you to choose:
+1. **Writing style**: storytelling / academic / concise
+2. **Formula explanation**: yes / no
+3. **GitHub code analysis**: yes / no (if repo available)
 
-```
-Help me create a 5-minute reading article for this academic paper
-```
+Then automatically generate the article.
 
-Claude will automatically:
-1. ✅ Parse the PDF using MinerU API
-2. ✅ Extract paper structure, figures, and formulas
-3. ✅ Generate a natural, fluent article following the writing paradigm
-4. ✅ Output in Markdown format (HTML optional)
+## Example
 
-**No manual commands needed!** The skill handles everything for you.
+See [examples/Engram_Analysis](examples/Engram_Analysis) for a complete example.
 
-## 📖 Example Case
+## Writing Styles
 
-Check out the [Engram Paper Analysis Example](examples/Engram_Analysis) to see the complete analysis effect.
+### storytelling (Default)
 
-This example demonstrates how to transform a complex deep learning paper into:
-- ⚡ 30-second overview
-- 🎯 Core problem and solution
-- 📊 Key experimental results
-- 💡 In-depth technical insights
-
-## 🎨 Writing Paradigm
-
-### ❌ Avoid Writing Like This
+Start from intuition, use metaphors, like telling a story:
 
 ```markdown
-## Method
-
-This paper proposes a hash-table-based conditional memory module.
-
-Main innovations include:
-1. Scalable memory bank design
-2. Efficient lookup mechanism
-3. Dynamic memory update strategy
-
-In experiments, we validated the effectiveness across multiple datasets...
-```
-
-### ✅ Write Like This Instead
-
-```markdown
-## Why Do We Need This Innovation?
-
 Have you ever thought that large language models don't actually have memory?
 Every time they answer "What's the capital of China?", they have to "compute"
-the answer from scratch, rather than looking it up like a dictionary.
-
-It's like deriving word meanings from etymology every time, instead of just
-checking a dictionary. Isn't that using a cannon to kill a mosquito?
-
-## Core Innovation: Memory is Memory, Computation is Computation
-
-Engram's core idea is simple: put knowledge that can be "memorized" into
-a lookup table...
+the answer from scratch. Isn't that using a cannon to kill a mosquito?
 ```
 
-### Key Principles
+### academic
 
-1. **Start with Intuition**: Present problems and motivations before technical details
-2. **Explain Background**: Introduce old technologies before new ones
-3. **Use Simple Examples**: Choose one example and use it throughout
-4. **Vivid Metaphors**: Make abstract concepts concrete ("cannon to kill mosquito", "lookup vs. derive")
-5. **Logical Progression**: Layer by layer, let readers naturally understand the design
-6. **Distill Insights**: Summarize core ideas in one sentence ("Memory is memory, computation is computation")
-7. **Rich Illustrations**: Explain every key figure in detail
-
-## 📁 Output Formats
-
-### Markdown (Default)
-- Lightweight, easy to edit
-- Compatible with WeChat Official Account
-- Perfect for daily use
-
-### HTML (Optional)
-- Embedded images (base64)
-- Single-file sharing
-- Great for preview and sharing
-
-## 🛠️ Technical Architecture
-
-```
-┌─────────────────────────────────────────────┐
-│  Input: PDF Paper                            │
-├─────────────────────────────────────────────┤
-│  Step 1: MinerU API High-Precision Parsing   │
-│  - Extract text, images, tables, formulas    │
-│  - Preserve LaTeX formulas                   │
-├─────────────────────────────────────────────┤
-│  Step 2: Smart Metadata Extraction           │
-│  - Title, authors, institutions              │
-│  - Section structure                         │
-│  - Figure list                               │
-├─────────────────────────────────────────────┤
-│  Step 3: Claude Intelligent Writing          │
-│  - Analyze paper content                     │
-│  - Generate article following paradigm       │
-│  - Natural and fluent narrative style        │
-├─────────────────────────────────────────────┤
-│  Step 4: Multi-Format Output                 │
-│  - Markdown (default)                        │
-│  - HTML (optional, base64 embedded images)   │
-└─────────────────────────────────────────────┘
-```
-
-## 📊 Article Structure Template
+Professional terminology, rigorous expression:
 
 ```markdown
-# [Paper Title] - In-Depth Analysis
-
-> **One-Sentence Summary**: [Core innovation]
-> **Code**: [GitHub link]
-> **Paper**: [Conference/Journal] [Year]
-
-## ⚡ 30-Second Overview
-
-**Problem**: [Limitations of existing approaches]
-**Solution**: [Core innovation of the paper]
-**Key Results**: [Most impressive experimental results]
-
-## 🎯 Why Does This Matter?
-
-[Start from intuition and problems to engage readers]
-
-## 📖 Background
-
-[Explain foundational technologies with simple examples]
-
-## 💡 Core Innovation
-
-[Detail innovations with illustrations]
-
-## 📊 Experimental Validation
-
-[Key experimental results and data analysis]
-
-## 🔬 In-Depth Analysis
-
-[Mechanism analysis, ablation studies, etc.]
-
-## 💭 Thoughts and Future Directions
-
-[Distill core insights, personal perspectives]
+This paper proposes Engram, a conditional memory architecture based on
+scalable lookup. The method combines N-gram retrieval with Transformer
+backbone, achieving O(1) complexity for static knowledge acquisition.
 ```
 
-## 🎓 Best Practices
+### concise
 
-### 1. Writing Style
-- ✅ Natural paragraph narration, like storytelling
-- ✅ Start from intuition and problems
-- ✅ Vivid metaphors and simple examples
-- ❌ Avoid bullet lists ("1. 2. 3.")
-- ❌ Avoid AI clichés ("delve into", "crucial", "in the domain of")
-- ❌ Avoid mechanical section titles
+Direct, high information density:
 
-### 2. Image Usage
-- ✅ Use extracted images for formulas, not LaTeX syntax
-- ✅ Use screenshots for result tables, more accurate than reformatting
-- ✅ Explain every key figure
-- ❌ Don't just paste 1-2 framework diagrams
+```markdown
+**Core Innovation**: O(1) lookup mechanism in Transformer
+**Key Design**: N-gram hash retrieval + context gating
+**Results**: MMLU +3.4, BBH +5.0 (equal params)
+```
 
-### 3. Context Saving
-- ✅ Trust metadata in `paper_info.json`
-- ✅ Reference image paths directly, don't read repeatedly
-- ✅ Only examine 1-2 core architecture diagrams
-- ❌ Don't repeatedly read all image files
+## Output Formats
 
-## 📚 Scripts Reference
+| Format | Description |
+|--------|-------------|
+| **Markdown** (default) | Lightweight, easy to edit |
+| **HTML** (optional) | Embedded images, single-file sharing |
 
-| Script | Function | Purpose |
-|--------|----------|---------|
-| `mineru_api.py` | MinerU Cloud API call | High-precision PDF parsing (recommended) |
-| `convert_pdf.py` | Local PDF conversion | Alternative, requires PyMuPDF |
-| `extract_paper_info.py` | Extract paper metadata | Generate structured paper info |
-| `generate_html.py` | Markdown → HTML | Generate HTML with base64 embedded images |
+## Architecture
 
-*Note: When using as a Claude Code Skill, these scripts are called automatically by Claude.*
+```
+PDF → MinerU API → Markdown + Images
+                        ↓
+              Style Selection (user)
+                        ↓
+              Article Generation
+                        ↓
+              Markdown / HTML Output
+```
 
-## ⚠️ Notes
+## Scripts
 
-### API Limitations
-- Maximum file size: 200MB
-- Maximum pages: 600
-- Supports PDF, DOC, PPT, images, etc.
+| Script | Purpose |
+|--------|---------|
+| `mineru_api.py` | MinerU Cloud API (recommended) |
+| `extract_paper_info.py` | Extract paper metadata |
+| `generate_html.py` | Markdown → HTML |
 
-### Usage Tips
-- Prefer MinerU API for highest accuracy
-- The skill automatically handles the entire workflow
-- Generated articles follow the natural storytelling paradigm
-- Select 3-5 key figures for illustration
+## API Limits
 
-## 🔗 Related Links
+- Max file size: 200MB
+- Max pages: 600
+- Supports: PDF, DOC, PPT, images
 
-- [MinerU Official Site](https://mineru.net)
-- [MinerU GitHub](https://github.com/opendatalab/MinerU)
-- [Example: Engram Paper Analysis](examples/Engram_Analysis)
+## Links
 
-## 📄 License
+- [MinerU](https://mineru.net)
+- [Example](examples/Engram_Analysis)
 
-MIT License
+## License
 
----
-
-**Use Cases**
-- 📢 Academic presentation preparation
-- 📱 Technical sharing on social media
-- 📝 Technical blog writing
-- 🎓 Quick paper understanding
-- 💡 Research direction exploration
-
-**Keywords**: Paper Analysis, PDF Parsing, Academic Sharing, Technical Blog, 5-Minute Reading
+MIT
