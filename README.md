@@ -16,6 +16,9 @@
 ## Key Features
 
 ### Multiple Writing Styles
+
+![Writing Styles](images/styles_notion.png)
+
 | Style | Description | Best For |
 |-------|-------------|----------|
 | **storytelling** | Intuitive, metaphors, like telling a story | Blogs, social media, general audience |
@@ -62,9 +65,10 @@ Claude will ask you to choose:
 
 Then automatically generate the article.
 
-## Example
+## Examples
 
-See [examples/Engram_Analysis](examples/Engram_Analysis) for a complete example.
+- [Engram Analysis](examples/Engram_Analysis) - Complete paper analysis
+- [Style Comparison](examples/style_comparison) - Same paper in 3 styles
 
 ## Writing Styles
 

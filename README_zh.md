@@ -16,6 +16,9 @@
 ## 核心特点
 
 ### 多种写作风格
+
+![写作风格](images/styles_notion.png)
+
 | 风格 | 特点 | 适用场景 |
 |------|------|----------|
 | **storytelling** | 从直觉出发，用比喻讲故事 | 公众号、技术博客、科普 |
@@ -64,7 +67,8 @@ Claude 会询问你选择：
 
 ## 示例
 
-查看 [examples/Engram_Analysis](examples/Engram_Analysis) 了解完整效果。
+- [Engram 分析](examples/Engram_Analysis) - 完整论文分析
+- [风格对比](examples/style_comparison) - 同一论文的 3 种风格
 
 ## 写作风格
 
