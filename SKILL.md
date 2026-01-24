@@ -86,12 +86,14 @@ python scripts/extract_paper_info.py <output_dir>/*.md paper_info.json
 **询问示例：**
 
 > 请选择文章风格：
-> 1. **storytelling** - 故事型，朴素接地气（推荐）
-> 2. **academic** - 学术型，专业严谨
+> 1. **academic** - 学术型，专业严谨（默认推荐）
+> 2. **storytelling** - 故事型，朴素接地气
 > 3. **concise** - 精炼型，快速阅读
 >
 > 是否需要公式讲解？（论文包含数学公式时推荐）
 > 是否需要结合 GitHub 代码分析？（检测到开源仓库：xxx）
+
+**如果用户不确定选哪个，默认使用 academic（学术型）风格。**
 
 ### 第四步：智能生成文章
 

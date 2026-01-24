@@ -166,19 +166,26 @@ Then automatically generate the article with extracted images.
 
 ## Examples
 
-### Complete Analysis
-
-- [Engram Analysis (storytelling)](examples/Engram_Analysis) - Full paper breakdown with images
+All examples use the same paper: **Engram** (DeepSeek-AI, 2025)
 
 ### Style Comparison
 
-Same paper (Engram) in three different styles:
+Same paper in three different styles:
 
-| Style | Lines | Images | Link |
-|-------|-------|--------|------|
+| Style | Lines | Images | Description |
+|-------|-------|--------|-------------|
+| [**academic**](examples/style_comparison/academic.md) | ~180 | 6 | Formal, structured (default) |
 | [storytelling](examples/style_comparison/storytelling.md) | ~200 | 6 | Narrative, metaphors |
-| [academic](examples/style_comparison/academic.md) | ~180 | 6 | Formal, structured |
 | [concise](examples/style_comparison/concise.md) | ~110 | 6 | Tables, bullet points |
+
+### Optional Features
+
+| Feature | Example | Description |
+|---------|---------|-------------|
+| Formula Explanation | [academic + formulas](examples/with_formulas/academic_formulas.md) | Insert formula images with symbol explanations |
+| Code Analysis | [academic + code](examples/with_code/academic_code.md) | Clone repo, show key source code |
+
+[View all examples →](examples/)
 
 ## Output Formats
 

@@ -166,19 +166,26 @@ Claude 会引导你完成：
 
 ## 示例
 
-### 完整分析
-
-- [Engram 分析 (storytelling)](examples/Engram_Analysis) - 完整论文深度解读
+所有示例均基于同一篇论文：**Engram**（DeepSeek-AI, 2025）
 
 ### 风格对比
 
-同一篇论文（Engram）的三种不同风格：
+同一篇论文的三种不同风格：
 
-| 风格 | 行数 | 图片数 | 链接 |
+| 风格 | 行数 | 图片数 | 说明 |
 |------|------|--------|------|
+| [**academic**](examples/style_comparison/academic.md) | ~180 | 6 | 正式严谨，结构清晰（默认） |
 | [storytelling](examples/style_comparison/storytelling.md) | ~200 | 6 | 故事叙述，生动比喻 |
-| [academic](examples/style_comparison/academic.md) | ~180 | 6 | 正式严谨，结构清晰 |
 | [concise](examples/style_comparison/concise.md) | ~110 | 6 | 表格列表，信息密集 |
+
+### 可选功能
+
+| 功能 | 示例 | 说明 |
+|------|------|------|
+| 公式讲解 | [academic + 公式](examples/with_formulas/academic_formulas.md) | 插入公式图片并详解符号 |
+| 代码分析 | [academic + 代码](examples/with_code/academic_code.md) | 克隆仓库，展示关键源码 |
+
+[查看所有示例 →](examples/)
 
 ## 输出格式
 
