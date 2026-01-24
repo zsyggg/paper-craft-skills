@@ -57,6 +57,8 @@ Claude 会询问你选择：
 
 同一篇论文的三种不同风格：
 
+![风格对比](skills/paper-analyzer/images/styles_comparison.png)
+
 | 风格 | 描述 | 示例 |
 |------|------|------|
 | **academic** | 正式严谨（默认） | [查看](skills/paper-analyzer/examples/style_comparison/academic.md) |
@@ -65,10 +67,21 @@ Claude 会询问你选择：
 
 ### 可选功能
 
-| 功能 | 示例 |
-|------|------|
-| 公式讲解 | [academic + 公式](skills/paper-analyzer/examples/with_formulas/academic_formulas.md) |
-| 代码分析 | [academic + 代码](skills/paper-analyzer/examples/with_code/academic_code.md) |
+#### 公式讲解
+
+插入公式图片，详解每个符号含义。
+
+![公式功能](skills/paper-analyzer/images/formula_feature.png)
+
+→ [查看示例：academic + 公式](skills/paper-analyzer/examples/with_formulas/academic_formulas.md)
+
+#### 代码分析
+
+将论文概念与 GitHub 源码对照。
+
+![代码功能](skills/paper-analyzer/images/code_feature.png)
+
+→ [查看示例：academic + 代码](skills/paper-analyzer/examples/with_code/academic_code.md)
 
 ### 前置准备
 

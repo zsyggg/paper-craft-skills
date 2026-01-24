@@ -57,6 +57,8 @@ Claude will ask you to choose:
 
 Same paper in three different styles:
 
+![Styles Comparison](skills/paper-analyzer/images/styles_comparison.png)
+
 | Style | Description | Example |
 |-------|-------------|---------|
 | **academic** | Formal, structured (default) | [View](skills/paper-analyzer/examples/style_comparison/academic.md) |
@@ -65,10 +67,21 @@ Same paper in three different styles:
 
 ### Optional Features
 
-| Feature | Example |
-|---------|---------|
-| Formula Explanation | [academic + formulas](skills/paper-analyzer/examples/with_formulas/academic_formulas.md) |
-| Code Analysis | [academic + code](skills/paper-analyzer/examples/with_code/academic_code.md) |
+#### Formula Explanation
+
+Insert formula images with detailed symbol breakdown.
+
+![Formula Feature](skills/paper-analyzer/images/formula_feature.png)
+
+→ [View example: academic + formulas](skills/paper-analyzer/examples/with_formulas/academic_formulas.md)
+
+#### Code Analysis
+
+Align paper concepts with GitHub source code.
+
+![Code Feature](skills/paper-analyzer/images/code_feature.png)
+
+→ [View example: academic + code](skills/paper-analyzer/examples/with_code/academic_code.md)
 
 ### Prerequisites
 
