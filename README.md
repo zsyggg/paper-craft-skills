@@ -109,12 +109,14 @@ Generate educational comics from academic papers with visual storytelling.
 
 ### Art Styles
 
-| Style | Best For | Example |
-|-------|----------|---------|
-| **classic** | General papers | ![classic](examples/paper-comic/cover-classic.png) |
-| **tech** | AI/CS papers | ![tech](examples/paper-comic/cover-tech.png) |
-| **warm** | Psychology/Education | ![warm](examples/paper-comic/cover-warm.png) |
-| **chalk** | Math/Physics | ![chalk](examples/paper-comic/cover-chalk.png) |
+<table>
+<tr>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-classic.png" width="180"/><br/><b>classic</b><br/>General papers</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-tech.png" width="180"/><br/><b>tech</b><br/>AI/CS papers</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-warm.png" width="180"/><br/><b>warm</b><br/>Psychology/Education</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-chalk.png" width="180"/><br/><b>chalk</b><br/>Math/Physics</td>
+</tr>
+</table>
 
 ### Usage
 
@@ -125,12 +127,14 @@ Generate educational comics from academic papers with visual storytelling.
 
 ### Example: Engram Paper (10 pages)
 
-| Page | Content |
-|------|---------|
-| ![Cover](examples/paper-comic/00-cover.png) | Cover |
-| ![Page 1](examples/paper-comic/01-page.png) | Problem introduction |
-| ![Page 5](examples/paper-comic/05-page.png) | Core concept |
-| ![Page 10](examples/paper-comic/10-page.png) | Conclusion |
+<table>
+<tr>
+<td align="center"><img src="examples/paper-comic/00-cover.png" width="150"/><br/>Cover</td>
+<td align="center"><img src="examples/paper-comic/01-page.png" width="150"/><br/>Page 1</td>
+<td align="center"><img src="examples/paper-comic/05-page.png" width="150"/><br/>Page 5</td>
+<td align="center"><img src="examples/paper-comic/10-page.png" width="150"/><br/>Page 10</td>
+</tr>
+</table>
 
 ---
 

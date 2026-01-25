@@ -109,12 +109,14 @@ export MINERU_TOKEN="your_token_here"  # 从 https://mineru.net 获取
 
 ### 画风选择
 
-| 画风 | 适用 | 示例 |
-|------|------|------|
-| **classic** | 通用论文 | ![classic](examples/paper-comic/cover-classic.png) |
-| **tech** | AI/计算机 | ![tech](examples/paper-comic/cover-tech.png) |
-| **warm** | 心理学/教育 | ![warm](examples/paper-comic/cover-warm.png) |
-| **chalk** | 数学/物理 | ![chalk](examples/paper-comic/cover-chalk.png) |
+<table>
+<tr>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-classic.png" width="180"/><br/><b>classic</b><br/>通用论文</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-tech.png" width="180"/><br/><b>tech</b><br/>AI/计算机</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-warm.png" width="180"/><br/><b>warm</b><br/>心理学/教育</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-chalk.png" width="180"/><br/><b>chalk</b><br/>数学/物理</td>
+</tr>
+</table>
 
 ### 使用方法
 
@@ -125,12 +127,14 @@ export MINERU_TOKEN="your_token_here"  # 从 https://mineru.net 获取
 
 ### 示例：Engram 论文（10 页）
 
-| 页面 | 内容 |
-|------|------|
-| ![封面](examples/paper-comic/00-cover.png) | 封面 |
-| ![第1页](examples/paper-comic/01-page.png) | 问题引入 |
-| ![第5页](examples/paper-comic/05-page.png) | 核心概念 |
-| ![第10页](examples/paper-comic/10-page.png) | 总结展望 |
+<table>
+<tr>
+<td align="center"><img src="examples/paper-comic/00-cover.png" width="150"/><br/>封面</td>
+<td align="center"><img src="examples/paper-comic/01-page.png" width="150"/><br/>第1页</td>
+<td align="center"><img src="examples/paper-comic/05-page.png" width="150"/><br/>第5页</td>
+<td align="center"><img src="examples/paper-comic/10-page.png" width="150"/><br/>第10页</td>
+</tr>
+</table>
 
 ---
 
