@@ -1,5 +1,5 @@
 ---
-name: academic-paper-analyzer
+name: paper-analyzer
 description: |
   将学术论文转化为深度技术文章，支持多种写作风格选择。
   使用 MinerU Cloud API 高精度解析 PDF，自动提取图片、表格、公式。
