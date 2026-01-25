@@ -4,6 +4,8 @@ English | [中文](./README.zh.md)
 
 Claude Code skills for academic papers: deep analysis, comics, summaries and more.
 
+**Compatible with**: Cursor, Codex, Windsurf, and other AI coding assistants that support Claude Code skills.
+
 ## Installation
 
 ### Quick Install (Recommended)
@@ -23,7 +25,7 @@ Simply tell Claude Code:
 | Skill | Description | Status |
 |-------|-------------|--------|
 | [paper-analyzer](#paper-analyzer) | Transform papers into readable articles with multiple styles | ✅ Available |
-| [paper-comic](#paper-comic) | Generate educational comics from papers | 🚧 Coming Soon |
+| [paper-comic](#paper-comic) | Generate educational comics from papers | ✅ Available |
 
 ---
 
@@ -94,14 +96,41 @@ export MINERU_TOKEN="your_token_here"  # Get from https://mineru.net
 
 ## paper-comic
 
-🚧 **Coming Soon**
+Generate educational comics from academic papers with visual storytelling.
 
-Generate educational comics from academic papers, explaining innovations and background in visual storytelling format.
+### Features
 
-Planned features:
-- Multiple comic styles (Logicomix, manga guide, etc.)
-- Panel-by-panel breakdown of paper concepts
-- Character-driven explanations
+| Feature | Description |
+|---------|-------------|
+| **4 Art Styles** | classic / tech / warm / chalk |
+| **10-Page Comics** | Complete narrative with characters |
+| **Visual Metaphors** | Abstract concepts made tangible |
+| **Chinese Text** | All dialogue in Chinese |
+
+### Art Styles
+
+| Style | Best For | Example |
+|-------|----------|---------|
+| **classic** | General papers | ![classic](examples/paper-comic/cover-classic.png) |
+| **tech** | AI/CS papers | ![tech](examples/paper-comic/cover-tech.png) |
+| **warm** | Psychology/Education | ![warm](examples/paper-comic/cover-warm.png) |
+| **chalk** | Math/Physics | ![chalk](examples/paper-comic/cover-chalk.png) |
+
+### Usage
+
+```
+/paper-comic /path/to/paper.pdf
+/paper-comic /path/to/paper.pdf --style tech
+```
+
+### Example: Engram Paper (10 pages)
+
+| Page | Content |
+|------|---------|
+| ![Cover](examples/paper-comic/00-cover.png) | Cover |
+| ![Page 1](examples/paper-comic/01-page.png) | Problem introduction |
+| ![Page 5](examples/paper-comic/05-page.png) | Core concept |
+| ![Page 10](examples/paper-comic/10-page.png) | Conclusion |
 
 ---
 
