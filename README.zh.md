@@ -31,7 +31,7 @@ npx skills add zsyggg/paper-craft-skills
 
 将学术论文转化为深度技术文章，支持多种写作风格。
 
-![Hero Banner](skills/paper-analyzer/images/hero_banner.png)
+![Hero Banner](images/hero_banner.png)
 
 ### 功能特点
 
@@ -57,13 +57,13 @@ Claude 会询问你选择：
 
 同一篇论文的三种不同风格：
 
-![风格对比](skills/paper-analyzer/images/styles_comparison.png)
+![风格对比](images/styles_comparison.png)
 
 | 风格 | 描述 | 示例 |
 |------|------|------|
-| **academic** | 正式严谨（默认） | [查看](skills/paper-analyzer/examples/style_comparison/academic.md) |
-| storytelling | 故事叙述，生动比喻 | [查看](skills/paper-analyzer/examples/style_comparison/storytelling.md) |
-| concise | 表格列表，信息密集 | [查看](skills/paper-analyzer/examples/style_comparison/concise.md) |
+| **academic** | 正式严谨（默认） | [查看](examples/style_comparison/academic.md) |
+| storytelling | 故事叙述，生动比喻 | [查看](examples/style_comparison/storytelling.md) |
+| concise | 表格列表，信息密集 | [查看](examples/style_comparison/concise.md) |
 
 ### 可选功能
 
@@ -71,17 +71,17 @@ Claude 会询问你选择：
 
 插入公式图片，详解每个符号含义。
 
-![公式功能](skills/paper-analyzer/images/formula_feature.png)
+![公式功能](images/formula_feature.png)
 
-→ [查看示例：academic + 公式](skills/paper-analyzer/examples/with_formulas/academic_formulas.md)
+→ [查看示例：academic + 公式](examples/with_formulas/academic_formulas.md)
 
 #### 代码分析
 
 将论文概念与 GitHub 源码对照。
 
-![代码功能](skills/paper-analyzer/images/code_feature.png)
+![代码功能](images/code_feature.png)
 
-→ [查看示例：academic + 代码](skills/paper-analyzer/examples/with_code/academic_code.md)
+→ [查看示例：academic + 代码](examples/with_code/academic_code.md)
 
 ### 前置准备
 

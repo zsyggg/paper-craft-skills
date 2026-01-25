@@ -31,7 +31,7 @@ Simply tell Claude Code:
 
 Transform academic papers into deep technical articles with customizable styles.
 
-![Hero Banner](skills/paper-analyzer/images/hero_banner.png)
+![Hero Banner](images/hero_banner.png)
 
 ### Features
 
@@ -57,13 +57,13 @@ Claude will ask you to choose:
 
 Same paper in three different styles:
 
-![Styles Comparison](skills/paper-analyzer/images/styles_comparison.png)
+![Styles Comparison](images/styles_comparison.png)
 
 | Style | Description | Example |
 |-------|-------------|---------|
-| **academic** | Formal, structured (default) | [View](skills/paper-analyzer/examples/style_comparison/academic.md) |
-| storytelling | Narrative, metaphors | [View](skills/paper-analyzer/examples/style_comparison/storytelling.md) |
-| concise | Tables, bullet points | [View](skills/paper-analyzer/examples/style_comparison/concise.md) |
+| **academic** | Formal, structured (default) | [View](examples/style_comparison/academic.md) |
+| storytelling | Narrative, metaphors | [View](examples/style_comparison/storytelling.md) |
+| concise | Tables, bullet points | [View](examples/style_comparison/concise.md) |
 
 ### Optional Features
 
@@ -71,17 +71,17 @@ Same paper in three different styles:
 
 Insert formula images with detailed symbol breakdown.
 
-![Formula Feature](skills/paper-analyzer/images/formula_feature.png)
+![Formula Feature](images/formula_feature.png)
 
-→ [View example: academic + formulas](skills/paper-analyzer/examples/with_formulas/academic_formulas.md)
+→ [View example: academic + formulas](examples/with_formulas/academic_formulas.md)
 
 #### Code Analysis
 
 Align paper concepts with GitHub source code.
 
-![Code Feature](skills/paper-analyzer/images/code_feature.png)
+![Code Feature](images/code_feature.png)
 
-→ [View example: academic + code](skills/paper-analyzer/examples/with_code/academic_code.md)
+→ [View example: academic + code](examples/with_code/academic_code.md)
 
 ### Prerequisites
 
