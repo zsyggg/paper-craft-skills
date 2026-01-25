@@ -118,21 +118,29 @@ export MINERU_TOKEN="your_token_here"  # 从 https://mineru.net 获取
 </tr>
 </table>
 
-### 使用方法
-
-```
-/paper-comic /path/to/paper.pdf
-/paper-comic /path/to/paper.pdf --style tech
-```
-
 ### 示例：Engram 论文（10 页）
 
 <table>
 <tr>
-<td align="center"><img src="examples/paper-comic/00-cover.png" width="150"/><br/>封面</td>
-<td align="center"><img src="examples/paper-comic/01-page.png" width="150"/><br/>第1页</td>
-<td align="center"><img src="examples/paper-comic/05-page.png" width="150"/><br/>第5页</td>
-<td align="center"><img src="examples/paper-comic/10-page.png" width="150"/><br/>第10页</td>
+<td align="center"><img src="examples/paper-comic/00-cover.png" width="120"/><br/>封面</td>
+<td align="center"><img src="examples/paper-comic/01-page.png" width="120"/><br/>第1页</td>
+<td align="center"><img src="examples/paper-comic/02-page.png" width="120"/><br/>第2页</td>
+<td align="center"><img src="examples/paper-comic/03-page.png" width="120"/><br/>第3页</td>
+<td align="center"><img src="examples/paper-comic/04-page.png" width="120"/><br/>第4页</td>
+</tr>
+<tr>
+<td align="center"><img src="examples/paper-comic/05-page.png" width="120"/><br/>第5页</td>
+<td align="center"><img src="examples/paper-comic/06-page.png" width="120"/><br/>第6页</td>
+<td align="center"><img src="examples/paper-comic/07-page.png" width="120"/><br/>第7页</td>
+<td align="center"><img src="examples/paper-comic/08-page.png" width="120"/><br/>第8页</td>
+<td align="center"><img src="examples/paper-comic/09-page.png" width="120"/><br/>第9页</td>
+</tr>
+<tr>
+<td align="center"><img src="examples/paper-comic/10-page.png" width="120"/><br/>第10页</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </table>
 

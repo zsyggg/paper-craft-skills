@@ -118,21 +118,29 @@ Generate educational comics from academic papers with visual storytelling.
 </tr>
 </table>
 
-### Usage
-
-```
-/paper-comic /path/to/paper.pdf
-/paper-comic /path/to/paper.pdf --style tech
-```
-
 ### Example: Engram Paper (10 pages)
 
 <table>
 <tr>
-<td align="center"><img src="examples/paper-comic/00-cover.png" width="150"/><br/>Cover</td>
-<td align="center"><img src="examples/paper-comic/01-page.png" width="150"/><br/>Page 1</td>
-<td align="center"><img src="examples/paper-comic/05-page.png" width="150"/><br/>Page 5</td>
-<td align="center"><img src="examples/paper-comic/10-page.png" width="150"/><br/>Page 10</td>
+<td align="center"><img src="examples/paper-comic/00-cover.png" width="120"/><br/>Cover</td>
+<td align="center"><img src="examples/paper-comic/01-page.png" width="120"/><br/>Page 1</td>
+<td align="center"><img src="examples/paper-comic/02-page.png" width="120"/><br/>Page 2</td>
+<td align="center"><img src="examples/paper-comic/03-page.png" width="120"/><br/>Page 3</td>
+<td align="center"><img src="examples/paper-comic/04-page.png" width="120"/><br/>Page 4</td>
+</tr>
+<tr>
+<td align="center"><img src="examples/paper-comic/05-page.png" width="120"/><br/>Page 5</td>
+<td align="center"><img src="examples/paper-comic/06-page.png" width="120"/><br/>Page 6</td>
+<td align="center"><img src="examples/paper-comic/07-page.png" width="120"/><br/>Page 7</td>
+<td align="center"><img src="examples/paper-comic/08-page.png" width="120"/><br/>Page 8</td>
+<td align="center"><img src="examples/paper-comic/09-page.png" width="120"/><br/>Page 9</td>
+</tr>
+<tr>
+<td align="center"><img src="examples/paper-comic/10-page.png" width="120"/><br/>Page 10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </table>
 
