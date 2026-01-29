@@ -2,199 +2,144 @@
 
 English | [中文](./README.zh.md)
 
-Claude Code skills for academic papers: deep analysis, comics, summaries and more.
+**Turn academic papers into in-depth articles or educational comics with one click**
 
-**Compatible with**: Cursor, Codex, Windsurf, and other AI coding assistants that support Claude Code skills.
+<table>
+<tr>
+<td width="50%" align="center">
+<b>paper-analyzer</b><br/>
+Paper → Deep Article<br/><br/>
+<img src="images/hero_banner.png" width="400"/>
+</td>
+<td width="50%" align="center">
+<b>paper-comic</b><br/>
+Paper → 10-Page Comic<br/><br/>
+<img src="examples/paper-comic/00-cover.png" width="200"/>
+</td>
+</tr>
+</table>
 
-## Installation
+## Quick Start
 
-### Quick Install (Recommended)
+### 1. Install
 
 ```bash
 npx skills add zsyggg/paper-craft-skills
 ```
 
-### Manual Install
+### 2. Configure API
 
-Simply tell Claude Code:
+| Skill | Required |
+|-------|----------|
+| paper-analyzer | `MINERU_TOKEN` - Get from [mineru.net](https://mineru.net) |
+| paper-comic | Google Account (auto login on first run) |
 
-> Please install skills from github.com/zsyggg/paper-craft-skills
+```bash
+# For paper-analyzer
+pip install requests markdown
+export MINERU_TOKEN="your_token"
+```
 
-## Available Skills
+### 3. Use
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| [paper-analyzer](#paper-analyzer) | Transform papers into readable articles with multiple styles | ✅ Available |
-| [paper-comic](#paper-comic) | Generate educational comics from papers | ✅ Available |
-| [baoyu-gemini-web](#baoyu-gemini-web) | Image generation backend using Gemini Web | ✅ Available |
+```bash
+# Analyze paper, generate article
+Please analyze this paper: /path/to/paper.pdf
+
+# Generate paper comic
+Please turn this paper into a comic: /path/to/paper.pdf
+```
 
 ---
 
 ## paper-analyzer
 
-Transform academic papers into deep technical articles with customizable styles.
+Transform academic papers into deep technical articles with 3 writing styles.
 
-![Hero Banner](images/hero_banner.png)
+### Styles
 
-### Features
+<table>
+<tr>
+<td align="center" width="33%">
+<b>academic</b><br/>(default)<br/><br/>
+Formal, rigorous
+</td>
+<td align="center" width="33%">
+<b>storytelling</b><br/><br/><br/>
+Vivid metaphors
+</td>
+<td align="center" width="33%">
+<b>concise</b><br/><br/><br/>
+Tables, bullet points
+</td>
+</tr>
+</table>
 
-| Feature | Description |
-|---------|-------------|
-| **3 Writing Styles** | storytelling (narrative) / academic (formal) / concise (dense) |
-| **Formula Explanation** | Insert formula images with symbol breakdown |
-| **Code Analysis** | Align paper concepts with GitHub source code |
-| **High-Precision Parsing** | MinerU Cloud API for PDF/images/tables/LaTeX |
-
-### Usage
-
-```
-Please analyze this paper: /path/to/paper.pdf
-```
-
-Claude will ask you to choose:
-1. **Style**: academic (default) / storytelling / concise
-2. **Formula explanation**: yes / no
-3. **Code analysis**: yes / no (if GitHub repo detected)
-
-### Style Comparison
-
-Same paper in three different styles:
-
-![Styles Comparison](images/styles_comparison.png)
-
-| Style | Description | Example |
-|-------|-------------|---------|
-| **academic** | Formal, structured (default) | [View](examples/style_comparison/academic.md) |
-| storytelling | Narrative, metaphors | [View](examples/style_comparison/storytelling.md) |
-| concise | Tables, bullet points | [View](examples/style_comparison/concise.md) |
+![Style Comparison](images/styles_comparison.png)
 
 ### Optional Features
 
-#### Formula Explanation
-
-Insert formula images with detailed symbol breakdown.
-
-![Formula Feature](images/formula_feature.png)
-
-→ [View example: academic + formulas](examples/with_formulas/academic_formulas.md)
-
-#### Code Analysis
-
-Align paper concepts with GitHub source code.
-
-![Code Feature](images/code_feature.png)
-
-→ [View example: academic + code](examples/with_code/academic_code.md)
-
-### Prerequisites
-
-```bash
-pip install requests markdown
-export MINERU_TOKEN="your_token_here"  # Get from https://mineru.net
-```
+| Feature | Description |
+|---------|-------------|
+| **Formula Explanation** | Insert formula images with symbol breakdown |
+| **Code Analysis** | Align paper concepts with GitHub source code |
 
 ---
 
 ## paper-comic
 
-Generate educational comics from academic papers with visual storytelling.
-
-### Prerequisites
-
-- **Google Account**: Required for Gemini Web authentication
-- **baoyu-gemini-web**: Image generation backend (included in this package)
-- **Bun runtime**: `npm install -g bun` or use `npx -y bun`
-
-First run will open Chrome browser for Google account authentication. Cookies are cached for subsequent runs.
-
-### Features
-
-| Feature | Description |
-|---------|-------------|
-| **4 Art Styles** | classic / tech / warm / chalk |
-| **10-Page Comics** | Complete narrative with characters |
-| **Visual Metaphors** | Abstract concepts made tangible |
-| **Chinese Text** | All dialogue in Chinese |
+Transform academic papers into 10-page educational comics with 4 art styles.
 
 ### Art Styles
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="examples/paper-comic/cover-classic.png" width="180"/><br/><b>classic</b><br/>General papers</td>
-<td align="center" width="25%"><img src="examples/paper-comic/cover-tech.png" width="180"/><br/><b>tech</b><br/>AI/CS papers</td>
-<td align="center" width="25%"><img src="examples/paper-comic/cover-warm.png" width="180"/><br/><b>warm</b><br/>Psychology/Education</td>
-<td align="center" width="25%"><img src="examples/paper-comic/cover-chalk.png" width="180"/><br/><b>chalk</b><br/>Math/Physics</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-classic.png" width="150"/><br/><b>classic</b><br/>General (default)</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-tech.png" width="150"/><br/><b>tech</b><br/>AI/CS</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-warm.png" width="150"/><br/><b>warm</b><br/>Psychology</td>
+<td align="center" width="25%"><img src="examples/paper-comic/cover-chalk.png" width="150"/><br/><b>chalk</b><br/>Math/Physics</td>
 </tr>
 </table>
 
-### Example: Engram Paper (10 pages)
+### Example: Engram Paper
 
 <table>
 <tr>
-<td align="center"><img src="examples/paper-comic/00-cover.png" width="120"/><br/>Cover</td>
-<td align="center"><img src="examples/paper-comic/01-page.png" width="120"/><br/>Page 1</td>
-<td align="center"><img src="examples/paper-comic/02-page.png" width="120"/><br/>Page 2</td>
-<td align="center"><img src="examples/paper-comic/03-page.png" width="120"/><br/>Page 3</td>
-<td align="center"><img src="examples/paper-comic/04-page.png" width="120"/><br/>Page 4</td>
+<td align="center"><img src="examples/paper-comic/00-cover.png" width="100"/><br/>Cover</td>
+<td align="center"><img src="examples/paper-comic/01-page.png" width="100"/><br/>1</td>
+<td align="center"><img src="examples/paper-comic/02-page.png" width="100"/><br/>2</td>
+<td align="center"><img src="examples/paper-comic/03-page.png" width="100"/><br/>3</td>
+<td align="center"><img src="examples/paper-comic/04-page.png" width="100"/><br/>4</td>
+<td align="center"><img src="examples/paper-comic/05-page.png" width="100"/><br/>5</td>
 </tr>
 <tr>
-<td align="center"><img src="examples/paper-comic/05-page.png" width="120"/><br/>Page 5</td>
-<td align="center"><img src="examples/paper-comic/06-page.png" width="120"/><br/>Page 6</td>
-<td align="center"><img src="examples/paper-comic/07-page.png" width="120"/><br/>Page 7</td>
-<td align="center"><img src="examples/paper-comic/08-page.png" width="120"/><br/>Page 8</td>
-<td align="center"><img src="examples/paper-comic/09-page.png" width="120"/><br/>Page 9</td>
-</tr>
-<tr>
-<td align="center"><img src="examples/paper-comic/10-page.png" width="120"/><br/>Page 10</td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center"><img src="examples/paper-comic/06-page.png" width="100"/><br/>6</td>
+<td align="center"><img src="examples/paper-comic/07-page.png" width="100"/><br/>7</td>
+<td align="center"><img src="examples/paper-comic/08-page.png" width="100"/><br/>8</td>
+<td align="center"><img src="examples/paper-comic/09-page.png" width="100"/><br/>9</td>
+<td align="center"><img src="examples/paper-comic/10-page.png" width="100"/><br/>10</td>
 <td></td>
 </tr>
 </table>
 
 ---
 
-## baoyu-gemini-web
+## Compatibility
 
-Image generation backend using Google Gemini Web. Used by paper-comic for generating comic pages.
+Works with:
 
-### Features
+- Claude Code
+- Cursor
+- Codex
+- Windsurf
+- Other Claude Code skill-compatible tools
 
-| Feature | Description |
-|---------|-------------|
-| **Image Generation** | Generate images from text prompts |
-| **Multi-turn Conversation** | Maintain context with sessionId |
-| **Text Generation** | Also supports text responses |
+---
 
-### Prerequisites
+## Acknowledgments
 
-- **Google Account**: Required for authentication
-- **Chrome Browser**: Used for initial login
-- **Bun runtime**: `npm install -g bun`
-
-### Usage
-
-```bash
-# Text generation
-npx -y bun scripts/main.ts "Your prompt here"
-
-# Image generation
-npx -y bun scripts/main.ts "A cute robot" --image robot.png
-
-# Multi-turn conversation (for consistent character design)
-npx -y bun scripts/main.ts "Design a character" --sessionId my-session
-npx -y bun scripts/main.ts "Draw the same character waving" --sessionId my-session
-```
-
-### Authentication
-
-First run opens Chrome to authenticate with Google. Cookies are cached for subsequent runs.
-
-```bash
-# Force cookie refresh
-npx -y bun scripts/main.ts --login
-```
+- **baoyu-gemini-web** - Image generation backend, based on [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills)
+- **MinerU** - High-precision PDF parsing from [mineru.net](https://mineru.net)
 
 ---
 
