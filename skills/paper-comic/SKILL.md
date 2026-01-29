@@ -99,23 +99,30 @@ description: |
 
 ### 第五步：生成图片
 
-使用 baoyu-gemini-web 生成：
+使用 baoyu-gemini-web 生成（需要 Google 账号认证）：
 
 ```bash
+# 获取技能安装路径（假设通过 npx skills add 安装）
+SKILL_DIR="$HOME/.claude/skills/baoyu-gemini-web"
+# 或者如果在其他位置：
+# SKILL_DIR="$HOME/.codex/skills/baoyu-gemini-web"
+
 # 生成角色参考图
-npx -y bun ~/.claude/skills/baoyu-gemini-web/scripts/main.ts \
+npx -y bun "$SKILL_DIR/scripts/main.ts" \
   --promptfiles references/base-prompt.md characters/characters.md \
   --image characters/characters.png \
   --sessionId comic-[topic]-[timestamp]
 
 # 生成各页（使用相同 sessionId 保持一致性）
-npx -y bun ~/.claude/skills/baoyu-gemini-web/scripts/main.ts \
+npx -y bun "$SKILL_DIR/scripts/main.ts" \
   --promptfiles references/base-prompt.md prompts/XX-page.md \
   --image XX-page.png \
   --sessionId comic-[topic]-[timestamp]
 ```
 
 **关键**：使用相同的 `--sessionId` 确保角色外观一致。
+
+**首次运行**：会打开 Chrome 浏览器进行 Google 账号认证，之后 Cookie 会被缓存。
 
 ### 第六步：输出文档
 

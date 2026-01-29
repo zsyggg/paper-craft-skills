@@ -26,6 +26,7 @@ Simply tell Claude Code:
 |-------|-------------|--------|
 | [paper-analyzer](#paper-analyzer) | Transform papers into readable articles with multiple styles | ✅ Available |
 | [paper-comic](#paper-comic) | Generate educational comics from papers | ✅ Available |
+| [baoyu-gemini-web](#baoyu-gemini-web) | Image generation backend using Gemini Web | ✅ Available |
 
 ---
 
@@ -98,6 +99,14 @@ export MINERU_TOKEN="your_token_here"  # Get from https://mineru.net
 
 Generate educational comics from academic papers with visual storytelling.
 
+### Prerequisites
+
+- **Google Account**: Required for Gemini Web authentication
+- **baoyu-gemini-web**: Image generation backend (included in this package)
+- **Bun runtime**: `npm install -g bun` or use `npx -y bun`
+
+First run will open Chrome browser for Google account authentication. Cookies are cached for subsequent runs.
+
 ### Features
 
 | Feature | Description |
@@ -143,6 +152,49 @@ Generate educational comics from academic papers with visual storytelling.
 <td></td>
 </tr>
 </table>
+
+---
+
+## baoyu-gemini-web
+
+Image generation backend using Google Gemini Web. Used by paper-comic for generating comic pages.
+
+### Features
+
+| Feature | Description |
+|---------|-------------|
+| **Image Generation** | Generate images from text prompts |
+| **Multi-turn Conversation** | Maintain context with sessionId |
+| **Text Generation** | Also supports text responses |
+
+### Prerequisites
+
+- **Google Account**: Required for authentication
+- **Chrome Browser**: Used for initial login
+- **Bun runtime**: `npm install -g bun`
+
+### Usage
+
+```bash
+# Text generation
+npx -y bun scripts/main.ts "Your prompt here"
+
+# Image generation
+npx -y bun scripts/main.ts "A cute robot" --image robot.png
+
+# Multi-turn conversation (for consistent character design)
+npx -y bun scripts/main.ts "Design a character" --sessionId my-session
+npx -y bun scripts/main.ts "Draw the same character waving" --sessionId my-session
+```
+
+### Authentication
+
+First run opens Chrome to authenticate with Google. Cookies are cached for subsequent runs.
+
+```bash
+# Force cookie refresh
+npx -y bun scripts/main.ts --login
+```
 
 ---
 

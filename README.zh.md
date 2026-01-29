@@ -26,6 +26,7 @@ npx skills add zsyggg/paper-craft-skills
 |------|------|------|
 | [paper-analyzer](#paper-analyzer) | 将论文转化为多种风格的深度文章 | ✅ 可用 |
 | [paper-comic](#paper-comic) | 从论文生成教育漫画 | ✅ 可用 |
+| [baoyu-gemini-web](#baoyu-gemini-web) | 使用 Gemini Web 的图片生成后端 | ✅ 可用 |
 
 ---
 
@@ -98,6 +99,14 @@ export MINERU_TOKEN="your_token_here"  # 从 https://mineru.net 获取
 
 从学术论文生成教育漫画，用视觉叙事解释核心概念。
 
+### 前置准备
+
+- **Google 账号**：用于 Gemini Web 认证
+- **baoyu-gemini-web**：图片生成后端（已包含在本包中）
+- **Bun 运行时**：`npm install -g bun` 或使用 `npx -y bun`
+
+首次运行会打开 Chrome 浏览器进行 Google 账号认证，之后 Cookie 会被缓存。
+
 ### 功能特点
 
 | 功能 | 描述 |
@@ -143,6 +152,49 @@ export MINERU_TOKEN="your_token_here"  # 从 https://mineru.net 获取
 <td></td>
 </tr>
 </table>
+
+---
+
+## baoyu-gemini-web
+
+使用 Google Gemini Web 的图片生成后端。paper-comic 使用此技能生成漫画页面。
+
+### 功能特点
+
+| 功能 | 描述 |
+|------|------|
+| **图片生成** | 从文本提示生成图片 |
+| **多轮对话** | 使用 sessionId 保持上下文 |
+| **文本生成** | 也支持文本响应 |
+
+### 前置准备
+
+- **Google 账号**：用于认证
+- **Chrome 浏览器**：用于首次登录
+- **Bun 运行时**：`npm install -g bun`
+
+### 使用方法
+
+```bash
+# 文本生成
+npx -y bun scripts/main.ts "你的提示词"
+
+# 图片生成
+npx -y bun scripts/main.ts "一个可爱的机器人" --image robot.png
+
+# 多轮对话（用于保持角色一致性）
+npx -y bun scripts/main.ts "设计一个角色" --sessionId my-session
+npx -y bun scripts/main.ts "画同一个角色在挥手" --sessionId my-session
+```
+
+### 认证
+
+首次运行会打开 Chrome 进行 Google 账号认证，之后 Cookie 会被缓存。
+
+```bash
+# 强制刷新 Cookie
+npx -y bun scripts/main.ts --login
+```
 
 ---
 
