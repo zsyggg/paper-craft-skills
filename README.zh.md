@@ -2,163 +2,121 @@
 
 [English](./README.md) | 中文
 
-**把学术论文一键变成深度文章、论文框架图和机制图解。**
+**把学术论文变成精美的方法图解和深度长文。零配置，一行命令。**
 
 <p align="center">
-  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="900" alt="paper-craft-skills 生成的 Transformer 方法总览图"/>
+  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="700" alt="基于 Attention Is All You Need 生成的 Transformer 架构图"/>
 </p>
 
 <p align="center">
-  <b>从论文 PDF 到可以直接放 README、文章和视频里的方法图。</b><br/>
-  先读论文，推荐该画哪些图，确认语言 / 风格 / 张数，再调用 Codex 生图能力或当前环境可用的生图后端。
+  输入 arxiv 链接，选择风格，输出像人类专家手笔的图解和文章。
 </p>
+
+---
 
 <table>
 <tr>
-<td width="50%" align="center">
-<img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="320"/><br/>
-<b>paper-comic</b><br/>
-论文 → 方法图解<br/>
-温暖笔记风 / 论文框架图风
+<td width="50%" align="center" valign="top">
+
+### 🎨 paper-comic
+**论文 → 方法图解**
+
+<img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="380"/><br/>
+<sub>Transformer 架构图 — 基于 <i>Attention Is All You Need</i> 生成</sub>
+
+<br/>
+
+读完论文 → 推荐画什么 → 你确认 → 生成。
+
+| 风格 | 效果 |
+|------|------|
+| **paper-figure** | 论文级别专业图表 |
+| **sketchnote** | 温暖手绘研究笔记 |
+
 </td>
-<td width="50%" align="center">
-<img src="images/hero_banner.png" width="420"/><br/>
-<b>paper-analyzer</b><br/>
-论文 → 深度技术文章<br/>
-支持公式、源码、图片和多种写作风格
+<td width="50%" align="center" valign="top">
+
+### 📄 paper-analyzer
+**论文 → 深度长文**
+
+<img src="images/styles_comparison.png" width="380"/><br/>
+<sub>三种写作风格：故事型 · 学术型 · 精炼型</sub>
+
+<br/>
+
+读完论文全文 → 搜索 GitHub 源码 → 按你选的风格写作。
+
+| 特性 | |
+|------|--|
+| 🌐 输出 | **HTML** — 手机/桌面都能看 |
+| 📐 公式 | **KaTeX** 渲染 |
+| 📊 图表 | **Mermaid** 架构图 |
+| ⚡ 配置 | **零配置** — 不需要任何 API key |
+
 </td>
 </tr>
 </table>
 
-## 为什么不一样
+---
 
-| Skill | 输出 | 适合做什么 |
-|------|------|------------|
-| **paper-comic** | 方法总览图、机制拆解图、论文视觉笔记 | README 首屏、视频宣传、技术文章配图、论文讲解 |
-| **paper-analyzer** | 深度 Markdown/HTML 长文，多种写作风格 | 论文解读、公众号文章、学习笔记、技术博客 |
+## paper-comic — 怎么用的
 
-`paper-comic` 现在不是固定 10 页漫画，而是论文方法图解：它会先读论文，判断哪些内容值得画，再问你要中文还是英文、要温暖笔记风还是论文框架图风、只要一张概述图还是生成多张机制图。
+```text
+/paper-comic https://arxiv.org/abs/1706.03762
+
+读完论文，会推荐：
+
+  建议生成 3 张图：
+  1. Transformer 架构总览
+  2. Self-attention 机制（核心创新）
+  3. Multi-head attention 细节
+
+  语言？[中文 / English]  风格？[sketchnote / paper-figure]  生成全部 3 张？
+```
+
+### 实际效果
+
+<p align="center">
+  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="550"/>
+  <br/><b>paper-figure</b> — 论文级别专业图表
+</p>
+
+<p align="center">
+  <img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="350"/>
+  <br/><b>sketchnote</b> — 温暖手绘风格
+</p>
+
+> 完整示例：[examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)
+
+---
+
+## paper-analyzer — 一篇论文，三种写法
+
+| 风格 | 读起来像 | 适合 |
+|------|---------|------|
+| **storytelling** | 公众号爆文 — 钩子开头、类比贯穿、金句收尾 | 公众号、推特、技术博客 |
+| **academic** | 学术综述 — KaTeX 公式、对比表格、深度分析 | 组会分享、文献综述 |
+| **concise** | 速查表 — Mermaid 流程图 + 关键数据表 | 快速了解、预读梳理 |
+
+**还能做的事：** 自动搜索 GitHub 开源代码、对照论文讲解、HTML 输出可直接分享。
+
+---
 
 ## 快速开始
-
-### 1. 安装
 
 ```bash
 npx skills add zsyggg/paper-craft-skills
 ```
 
-### 2. 配置
-
-| 技能 | 需要配置 |
-|------|----------|
-| paper-analyzer | `MINERU_TOKEN`，从 [mineru.net](https://mineru.net) 获取 |
-| paper-comic | 当前环境可用的生图后端。在 Codex 中会使用内置 `imagegen` skill。 |
-
 ```bash
-# paper-analyzer 需要
-pip install requests markdown
-export MINERU_TOKEN="your_token"
+/paper-comic https://arxiv.org/abs/1706.03762
+/paper-analyzer https://arxiv.org/abs/1706.03762
 ```
 
-### 3. 使用
+不需要任何 API key。不需要注册。图片生成自动使用你环境里已有的能力——Codex 内置 imagegen 或其他已安装的后端。
 
-```bash
-# 生成论文方法图解
-/paper-comic /path/to/paper.pdf
-/paper-comic https://arxiv.org/abs/1706.03762 --style paper-figure --language English --pages 1
+**支持：** Codex · Claude Code · Cursor · Windsurf
 
-# 分析论文，生成深度文章
-请帮我分析这篇论文：/path/to/paper.pdf
-```
-
-## paper-comic：论文方法图解
-
-生成图片前，skill 会先推荐方案：
-
-```text
-我建议生成 4 张图：
-1. 方法总览图
-2. 核心机制 A
-3. 核心机制 B
-4. 关键结果图
-
-请确认：
-- 语言：中文 / English / 双语
-- 风格：sketchnote / paper-figure
-- 范围：只要第 1 张，还是生成全部 4 张？
-```
-
-### 两种视觉风格
-
-| 风格 | 视觉效果 | 适合场景 |
-|------|----------|----------|
-| **sketchnote** | 温暖科研笔记风，手绘箭头、圈注和理解锚点 | 想让人快速看懂论文在做什么 |
-| **paper-figure** | 干净专业的论文框架图，模块、箭头、矩阵和结果更工整 | 想做 README 首屏、技术文章头图、演示文稿 |
-
-### 示例：Attention Is All You Need
-
-<table>
-<tr>
-<td align="center" width="58%">
-<img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="520"/><br/>
-<b>paper-figure</b>：Transformer 方法总览
-</td>
-<td align="center" width="42%">
-<img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="260"/><br/>
-<b>sketchnote</b>：自注意力机制图解
-</td>
-</tr>
-</table>
-
-完整示例见：[examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)
-
-## paper-analyzer：深度论文文章
-
-将学术论文转化为深度技术文章，支持 3 种写作风格。
-
-### 写作风格
-
-<table>
-<tr>
-<td align="center" width="33%">
-<b>academic</b><br/>学术型（默认）<br/><br/>
-正式严谨，适合学术分享
-</td>
-<td align="center" width="33%">
-<b>storytelling</b><br/>故事型<br/><br/>
-生动比喻，适合公众号
-</td>
-<td align="center" width="33%">
-<b>concise</b><br/>精炼型<br/><br/>
-表格列表，快速阅读
-</td>
-</tr>
-</table>
-
-![风格对比](images/styles_comparison.png)
-
-### 可选功能
-
-| 功能 | 说明 | 效果 |
-|------|------|------|
-| **公式讲解** | 插入公式图片，详解符号含义 | <img src="images/formula_feature.png" width="260"/> |
-| **代码分析** | 论文概念与 GitHub 源码对照 | <img src="images/code_feature.png" width="260"/> |
-
-## 兼容性
-
-支持以下 AI 编程助手：
-
-- Codex
-- Claude Code
-- Cursor
-- Windsurf
-- 其他支持 Claude Code skill 的工具
-
-## 致谢
-
-- **MinerU** - PDF 高精度解析，来自 [mineru.net](https://mineru.net)
-- 图片生成使用当前环境可用的生图后端；在 Codex 中会使用内置 `imagegen`。
-
-## License
+---
 
 MIT

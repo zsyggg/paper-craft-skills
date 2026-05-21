@@ -5,140 +5,119 @@ English | [中文](./README.zh.md)
 **Turn academic papers into polished method figures and in-depth articles — zero config, one command.**
 
 <p align="center">
-  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="900" alt="Transformer architecture overview — generated from Attention Is All You Need"/>
+  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="700" alt="Transformer architecture — generated from Attention Is All You Need"/>
 </p>
 
 <p align="center">
-  <b>From arxiv link to publication-ready visuals and deep-dive articles.</b><br/>
-  Drop a paper URL, pick a style, get figures and articles that look like a human expert made them.
+  From arxiv link to publication-ready visuals and deep-dive articles.<br/>
+  Drop a paper, pick a style, get output that looks like a human expert made it.
 </p>
 
 ---
 
-## What's inside
-
 <table>
 <tr>
 <td width="50%" align="center" valign="top">
-<img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="400"/><br/>
-<h3>paper-comic</h3>
-Paper → Method figures & visual notes<br/>
-<sub>sketchnote · paper-figure styles</sub>
+
+### 🎨 paper-comic
+**Paper → Method Figures**
+
+<img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="380"/><br/>
+<sub>Transformer architecture — generated from <i>Attention Is All You Need</i></sub>
+
+<br/>
+
+Reads your paper → proposes what to draw → you confirm → generates.
+
+| Style | Vibe |
+|-------|------|
+| **paper-figure** | Publication-grade diagrams |
+| **sketchnote** | Warm hand-drawn research notes |
+
 </td>
 <td width="50%" align="center" valign="top">
-<h3>paper-analyzer</h3>
-Paper → Deep technical articles<br/>
-<sub>storytelling · academic · concise styles</sub><br/><br/>
-<img src="images/styles_comparison.png" width="400"/>
+
+### 📄 paper-analyzer
+**Paper → Deep Articles**
+
+<img src="images/styles_comparison.png" width="380"/><br/>
+<sub>Three writing styles: storytelling · academic · concise</sub>
+
+<br/>
+
+Reads the full paper → searches GitHub for code → writes in your chosen style.
+
+| Feature | |
+|---------|--|
+| 🌐 Output | **HTML** — share anywhere, read on mobile |
+| 📐 Formulas | **KaTeX** rendering |
+| 📊 Diagrams | **Mermaid** architecture charts |
+| ⚡ Setup | **Zero config** — no API keys |
+
 </td>
 </tr>
 </table>
 
 ---
 
-## paper-comic — Method figures that explain
-
-**Not a comic book. Not a diagram tool. It reads your paper, figures out what's worth drawing, and draws it.**
-
-### How it works
+## paper-comic — How it works
 
 ```text
-You: /paper-comic https://arxiv.org/abs/1706.03762
+/paper-comic https://arxiv.org/abs/1706.03762
 
-Paper-comic reads the paper, then recommends:
+Reads the paper, then recommends:
 
   I suggest 3 figures:
   1. Transformer architecture overview
-  2. Self-attention mechanism (the core innovation)
+  2. Self-attention mechanism
   3. Multi-head attention detail
 
   Language? [Chinese / English]  Style? [sketchnote / paper-figure]  Generate all 3?
-
-You confirm. It draws.
 ```
 
-### Two styles
-
-| Style | What it looks like | When to use |
-|-------|-------------------|-------------|
-| **paper-figure** | Clean, publication-grade diagrams — polished modules, precise arrows, conference-paper quality | README hero images, slides, tweets, arXiv pages |
-| **sketchnote** | Warm hand-drawn research notes — personal, approachable, feels like a colleague's whiteboard sketch | Blog posts, explainer threads, teaching, quick understanding |
-
-### Real example: Attention Is All You Need
+### Example outputs
 
 <p align="center">
-  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="700"/>
+  <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="550"/>
+  <br/><b>paper-figure</b> — clean, publication-grade
 </p>
-
-<p align="center"><b>paper-figure style — Transformer architecture overview</b></p>
 
 <p align="center">
-  <img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="450"/>
+  <img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="350"/>
+  <br/><b>sketchnote</b> — warm, approachable
 </p>
 
-<p align="center"><b>sketchnote style — Self-attention mechanism explained</b></p>
-
-> Full example: [examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)
+> Full walkthrough: [examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)
 
 ---
 
-## paper-analyzer — Articles that read like a human expert wrote them
+## paper-analyzer — Three styles, one paper
 
-Transform any paper into a polished, in-depth article. **Not a paper translator — a re-interpreter.** It reads the full text, searches for open-source code, cross-references implementations, and writes with your chosen style.
+| Style | Reads like | Use it for |
+|-------|-----------|------------|
+| **storytelling** | A viral blog post — hooks, analogies, golden takeaway | WeChat, Twitter, blogs |
+| **academic** | A peer-reviewed deep dive — KaTeX formulas, comparison tables | Lab meetings, lit reviews |
+| **concise** | A cheat sheet — Mermaid diagram + key data table | Quick understanding |
 
-### Three writing styles
-
-| Style | Output | Best for |
-|-------|--------|----------|
-| **storytelling** | Blog-style with hooks, analogies, and a golden takeaway sentence | WeChat articles, Twitter threads, blog posts |
-| **academic** | Structured deep-dive with KaTeX formulas, comparison tables, and critical analysis | Lab meetings, literature reviews, research notes |
-| **concise** | Dense summary with a Mermaid architecture diagram and key data table | Quick understanding, pre-reading skim |
-
-### What it actually does
-
-- 📖 Reads the full paper (arxiv URL, local PDF, or pasted text)
-- 🔍 Searches GitHub for the paper's open-source implementation
-- ✍️ Writes with vivid analogies (storytelling) or rigorous depth (academic)
-- 📐 Renders formulas with KaTeX — clean, readable, professional
-- 📊 Adds Mermaid diagrams to explain architectures at a glance
-- 🌐 Outputs **HTML** — ready to share, read on mobile, or post anywhere
-- ⚡ **Zero config** — no API keys required
-
-### Input formats
-
-```bash
-/paper-analyzer https://arxiv.org/abs/1706.03762     # arxiv link
-/paper-analyzer /path/to/paper.pdf                     # local PDF
-/paper-analyzer                                         # then paste text
-```
+**Also does:** GitHub code search & cross-reference, automatic formula rendering, HTML output ready to share.
 
 ---
 
 ## Quick Start
 
 ```bash
-# One command to install
 npx skills add zsyggg/paper-craft-skills
+```
 
-# One command to use
+```bash
 /paper-comic https://arxiv.org/abs/1706.03762
 /paper-analyzer https://arxiv.org/abs/1706.03762
 ```
 
-**That's it. No API keys. No accounts. No setup.** Image generation uses whatever your environment already has — Codex built-in `imagegen`, or any installed image backend.
+No API keys. No accounts. Image generation uses whatever your environment has — Codex built-in `imagegen`, or any installed backend.
+
+**Works with:** Codex · Claude Code · Cursor · Windsurf
 
 ---
-
-## Compatibility
-
-- **Codex** (recommended — built-in image generation for paper-comic)
-- **Claude Code**
-- **Cursor**
-- **Windsurf**
-- Any Claude Code skill-compatible tool
-
----
-
-## License
 
 MIT
