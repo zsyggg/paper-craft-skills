@@ -53,7 +53,7 @@ Reads your paper → proposes what to draw → you confirm → generates.
 | Style | Vibe |
 |-------|------|
 | **paper-figure** | Publication-grade diagrams |
-| **sketchnote** | Warm hand-drawn research notes |
+| **sketchnote** | Bright, warm hand-drawn study notes |
 
 </td>
 <td width="50%" align="center" valign="top">
@@ -88,12 +88,16 @@ Reads the full paper → searches GitHub for code → writes in your chosen styl
 
 Reads the paper, then recommends:
 
-  I suggest 3 figures:
-  1. Transformer architecture overview
-  2. Self-attention mechanism
-  3. Multi-head attention detail
+  I suggest 6 figures:
+  1. Cover: one-line contribution + visual anchor
+  2. Transformer architecture overview
+  3. Self-attention mechanism
+  4. Multi-head attention detail
+  5. Encoder / Decoder Block
+  6. Key results
 
-  Language? [Chinese / English]  Style? [sketchnote / paper-figure]  Generate all 3?
+  Or generate only 1 overview figure, or expand to 8 detailed mechanism figures.
+  Language? [Chinese / English]  Style? [sketchnote / paper-figure]  Scope and count?
 ```
 
 ### Example outputs
@@ -105,7 +109,7 @@ Reads the paper, then recommends:
 
 <p align="center">
   <img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="350"/>
-  <br/><b>sketchnote</b> — warm, approachable
+  <br/><b>sketchnote</b> — bright, warm, approachable
 </p>
 
 > Full walkthrough: [examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)

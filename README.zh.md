@@ -52,7 +52,7 @@ npx skills add zsyggg/paper-craft-skills
 | 风格 | 效果 |
 |------|------|
 | **paper-figure** | 论文级别专业图表 |
-| **sketchnote** | 温暖手绘研究笔记 |
+| **sketchnote** | 明亮温暖的手抄报式研究笔记 |
 
 </td>
 <td width="50%" align="center" valign="top">
@@ -87,12 +87,16 @@ npx skills add zsyggg/paper-craft-skills
 
 读完论文，会推荐：
 
-  建议生成 3 张图：
-  1. Transformer 架构总览
-  2. Self-attention 机制
-  3. Multi-head attention 细节
+  建议生成 6 张图：
+  1. 封面图：一句话贡献 + 视觉锚点
+  2. Transformer 架构总览
+  3. Self-attention 机制
+  4. Multi-head attention 细节
+  5. Encoder / Decoder Block
+  6. 关键结果
 
-  语言？[中文 / English]  风格？[sketchnote / paper-figure]  生成全部 3 张？
+  也可以只生成 1 张总览图，或扩展到 8 张把机制讲更细。
+  语言？[中文 / English]  风格？[sketchnote / paper-figure]  范围和张数？
 ```
 
 ### 实际效果
@@ -104,7 +108,7 @@ npx skills add zsyggg/paper-craft-skills
 
 <p align="center">
   <img src="examples/paper-illustrated/attention-is-all-you-need/self-attention-sketchnote.png" width="350"/>
-  <br/><b>sketchnote</b> — 温暖手绘风格
+  <br/><b>sketchnote</b> — 明亮温暖的手抄报风格
 </p>
 
 > 完整示例：[examples/paper-illustrated/attention-is-all-you-need](./examples/paper-illustrated/attention-is-all-you-need)
