@@ -15,6 +15,24 @@ description: |
 3. 用生图模型生成 16:9 slide image。
 4. 合成 PPTX/PDF，并保留 prompts 作为可返修的源文件。
 
+## 不可绕过的生图要求
+
+Paper Deck 的 V1 是 **raster-first AIGC slide image** 工作流。除非用户明确要求“不要生图”“用代码画图”“只要可编辑 PPT”或“使用 HTML/SVG/Canvas 生成”，否则必须调用真实的 raster image generation backend 为每一页生成图片。
+
+严格禁止把以下产物冒充为本 skill 的“生图页”：
+
+- 用 Python/Pillow、SVG、HTML/CSS、Canvas、Mermaid、matplotlib、PPT shapes 或任何本地绘图代码直接画出的整页图片
+- 用模板、纯排版脚本、截图、占位图或手工组合元素替代生图后端输出
+- 先本地画整页，再仅做轻微滤镜/后处理后当作 AIGC slide image
+
+允许的本地处理仅限：
+
+- 移动、复制、重命名生图后端输出文件
+- 必要的格式转换、压缩、尺寸校验、PPTX/PDF 合成
+- 用户明确选择混合方案时，在生图背景上叠加少量可编辑文字层；此时必须在 `deck-brief.md` 和交付说明中明确记录“混合文字层”，不能声称整页文字都由生图模型完成
+
+如果当前环境没有可用的 raster image generation backend，必须停止并说明缺少生图后端；不要退化成本地绘图替代方案。
+
 ## 何时使用
 
 适合：
@@ -150,6 +168,14 @@ Prompt 写法读取 `references/prompt-template.md`。
 2. 如果用户指定 `baoyu-imagine`、Gemini、OpenAI、Seedream 等后端，按用户指定。
 3. 如果没有可用生图后端，停止并告诉用户需要一个 raster image backend。
 
+生图门禁：
+- 在调用任何生图工具之前，必须已经写好对应页的 `prompts/NN-*.md`。
+- 每一页最终进入 `images/` 的主图必须来自真实 raster image generation backend。
+- 不允许用 Python/Pillow、SVG、HTML/CSS、Canvas、Mermaid、matplotlib、PPT shapes 或本地绘图脚本生成整页主图来替代生图。
+- 不允许因为担心中文文字错误，就绕过生图后端改成本地绘制整页。正确做法是减少图片内文字、改 prompt 重生成，或在用户同意的情况下使用“生图背景 + 可编辑文字层”的混合方案。
+- 如果使用混合文字层，`images/` 中仍必须保留每页的生图背景或生图整页来源，并在 `deck-brief.md` 记录哪些文字是后叠加的。
+- 生成后要在 `generation-log.md` 记录每页使用的后端、prompt 文件、输出文件、生成时间；没有生成记录的图片不能作为最终交付页。
+
 生成策略：
 - 先生成第 1 页作为风格锚点。
 - 后续页如果后端支持 reference image，就用第 1 页作为风格参考，降低漂移。
@@ -177,6 +203,8 @@ python3 <SKILL_ROOT>/scripts/merge_deck.py paper-deck/{topic-slug}
 - 风格是否一致
 - 图片文字是否清晰、无错别字、无伪字
 - 是否存在 AI 常见问题：假 UI、假 logo、乱码标签、过度赛博、塑料 3D、无意义装饰
+- `generation-log.md` 是否存在，且每一页都记录了真实 raster image generation backend、prompt 文件和输出文件
+- 是否存在本地绘图/模板/截图冒充生图页；如有，必须重做或明确改成用户确认过的非 paper-deck 路线
 - PPTX/PDF 是否能打开，页数是否正确
 
 ### Step 9: 返修
