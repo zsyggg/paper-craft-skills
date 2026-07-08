@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>paper-craft-skills — 10 Academic AI Skills</title>
+<style>
+:root {
+  --bg: #0f172a; --card: #1e293b; --text: #e2e8f0;
+  --muted: #94a3b8; --accent: #60a5fa; --border: #334155;
+  --blue: #2563eb; --green: #16a34a; --orange: #ea580c;
+  --purple: #7c3aed; --pink: #db2777; --teal: #0d9488;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem}
+
+header{text-align:center;margin-bottom:3rem}
+h1{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
+.subtitle{color:var(--muted);font-size:1.1rem;margin-bottom:.5rem}
+.badge{display:inline-block;background:var(--accent);color:#0f172a;
+  padding:.25rem 1rem;border-radius:999px;font-size:.85rem;font-weight:600}
+.quick-start{background:var(--card);border-radius:12px;padding:1.5rem;margin-bottom:3rem;
+  border:1px solid var(--border)}
+.quick-start h2{font-size:1.1rem;margin-bottom:.8rem;color:var(--accent)}
+.quick-start code{display:block;background:var(--bg);padding:.8rem 1rem;
+  border-radius:8px;margin:.3rem 0;font-size:.9rem;border:1px solid var(--border)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;
+  margin-bottom:3rem}
+
+.card{background:var(--card);border-radius:12px;padding:1.25rem;
+  border:1px solid var(--border);transition:all .2s;position:relative;
+  overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.card.poster::before{background:var(--blue)}
+.card.summary::before{background:var(--green)}
+.card.survey::before{background:var(--purple)}
+.card.mindmap::before{background:var(--orange)}
+.card.review::before{background:var(--pink)}
+.card.slides::before{background:var(--teal)}
+.card.tldr::before{background:var(--accent)}
+.card.original::before{background:var(--muted)}
+
+.card h3{font-size:1.1rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem}
+.card .emoji{font-size:1.3rem}
+.card .desc{color:var(--muted);font-size:.85rem;margin-bottom:.8rem}
+.card .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.8rem}
+.card .tags span{background:var(--bg);color:var(--muted);padding:2px 8px;
+  border-radius:4px;font-size:.75rem;border:1px solid var(--border)}
+.card .cmd{background:var(--bg);padding:.5rem .8rem;border-radius:6px;
+  font-family:"SF Mono","Fira Code",monospace;font-size:.78rem;color:var(--accent);
+  border:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .output{font-size:.78rem;color:var(--muted);margin-top:.4rem}
+
+.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
+.mega-box{background:var(--card);border-radius:12px;padding:1.5rem;
+  border:1px solid var(--border)}
+.mega-box h2{font-size:1rem;margin-bottom:1rem;color:var(--accent)}
+.mega-box ul{list-style:none}
+.mega-box li{padding:.4rem 0;font-size:.9rem;display:flex;align-items:center;gap:.5rem}
+.mega-box .num{color:var(--muted);font-size:.8rem;min-width:1.5rem}
+
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:2rem 0;
+  border-top:1px solid var(--border)}
+footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:600px){
+  h1{font-size:2rem}
+  .grid{grid-template-columns:1fr}
+  .mega-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🎨 paper-craft-skills</h1>
+  <p class="subtitle">10 AI-powered skills for academic papers — zero config, one command</p>
+  <span class="badge">★ No API keys needed</span>
+</header>
+
+<div class="quick-start">
+  <h2>⚡ Install in 10 seconds</h2>
+  <code>npx skills add zsyggg/paper-craft-skills</code>
+  <p style="color:var(--muted);font-size:.85rem;margin-top:.5rem">
+    Then ask your AI agent: <code>/paper-comic https://arxiv.org/abs/1706.03762</code>
+  </p>
+</div>
+
+<h2 style="margin-bottom:1rem;font-size:1.3rem">🧰 All Skills</h2>
+<div class="grid">
+
+  <div class="card original">
+    <h3><span class="emoji">🎨</span> paper-comic</h3>
+    <p class="desc">Paper → AIGC Method Figures (sketchnote / paper-figure)</p>
+    <div class="tags"><span>figure</span><span>aigc</span><span>visual</span></div>
+    <div class="cmd">/paper-comic paper.pdf --style sketchnote</div>
+    <div class="output">📄 PNG · 2 styles · interactive workflow</div>
+  </div>
+
+  <div class="card original">
+    <h3><span class="emoji">📄</span> paper-analyzer</h3>
+    <p class="desc">Paper → Deep HTML Article (storytelling / academic / concise)</p>
+    <div class="tags"><span>article</span><span>html</span><span>katex</span></div>
+    <div class="cmd">/paper-analyzer paper.pdf --style academic</div>
+    <div class="output">📄 HTML · KaTeX · Mermaid · dark mode 🌙</div>
+  </div>
+
+  <div class="card original">
+    <h3><span class="emoji">🖼️</span> paper-deck</h3>
+    <p class="desc">Paper → AIGC Visual Slide Deck (PPTX/PDF, 4 styles)</p>
+    <div class="tags"><span>slides</span><span>aigc</span><span>pptx</span></div>
+    <div class="cmd">/paper-deck paper.pdf --style journal-minimal --slides 12</div>
+    <div class="output">📦 PPTX · PDF · 4 presets · quality gate ✓</div>
+  </div>
+
+  <div class="card survey">
+    <h3><span class="emoji">🔬</span> paper-survey</h3>
+    <p class="desc">Multi-Paper → Comparison Figures/Slides/Article</p>
+    <div class="tags"><span>survey</span><span>comparison</span><span>aigc</span></div>
+    <div class="cmd">/paper-survey p1.pdf p2.pdf --format survey-article</div>
+    <div class="output">📊 3 modes · 5-dimension matrix · color-coded</div>
+  </div>
+
+  <div class="card poster">
+    <h3><span class="emoji">📋</span> paper-poster</h3>
+    <p class="desc">Paper → 300dpi AIGC Conference Poster</p>
+    <div class="tags"><span>poster</span><span>aigc</span><span>print</span></div>
+    <div class="cmd">/paper-poster paper.pdf --style conference-wide</div>
+    <div class="output">📐 48×36in · 300dpi · 3 presets · print-ready PDF</div>
+  </div>
+
+  <div class="card summary">
+    <h3><span class="emoji">📊</span> paper-summary</h3>
+    <p class="desc">Paper → One-Page Visual Summary (infographic/card/timeline)</p>
+    <div class="tags"><span>summary</span><span>infographic</span><span>aigc</span></div>
+    <div class="cmd">/paper-summary paper.pdf --mode infographic</div>
+    <div class="output">🖼️ 3 modes · 2:3 / 1:1 / 16:9 · max 200 chars</div>
+  </div>
+
+  <div class="card mindmap">
+    <h3><span class="emoji">🧠</span> paper-mindmap</h3>
+    <p class="desc">Paper → Mind Map (Mermaid code / AIGC image)</p>
+    <div class="tags"><span>mindmap</span><span>mermaid</span><span>structure</span></div>
+    <div class="cmd">/paper-mindmap paper.pdf</div>
+    <div class="output">🌳 5 branches · 2 modes · max 4 levels deep</div>
+  </div>
+
+  <div class="card review">
+    <h3><span class="emoji">📝</span> paper-review</h3>
+    <p class="desc">Automated Peer Review — 3 reports + editorial decision</p>
+    <div class="tags"><span>review</span><span>peer-review</span><span>scoring</span></div>
+    <div class="cmd">/paper-review paper.pdf</div>
+    <div class="output">📋 5 dimensions · 1-10 scoring · meta review</div>
+  </div>
+
+  <div class="card slides">
+    <h3><span class="emoji">🌐</span> paper-slides-html</h3>
+    <p class="desc">HTML/CSS Slides — zero-dependency, browser-based presentations</p>
+    <div class="tags"><span>html</span><span>slides</span><span>no-aigc</span></div>
+    <div class="cmd">/paper-slides-html paper.pdf --theme academic</div>
+    <div class="output">📄 3 themes · ~50KB · fully editable · print to PDF</div>
+  </div>
+
+  <div class="card tldr">
+    <h3><span class="emoji">⚡</span> paper-tldr</h3>
+    <p class="desc">Extreme Summarization — one-liner / TL;DR / 3 bullets</p>
+    <div class="tags"><span>tldr</span><span>summary</span><span>fast</span></div>
+    <div class="cmd">/paper-tldr paper.pdf --level all</div>
+    <div class="output">📝 3 levels · ≤30/150/20 chars · 10s to read</div>
+  </div>
+
+</div>
+
+<div class="mega-grid">
+  <div class="mega-box">
+    <h2>📦 Output Formats</h2>
+    <ul>
+      <li><span class="num">🖼️</span> PNG — AIGC figures, posters, summaries, mindmaps</li>
+      <li><span class="num">📄</span> HTML — deep articles, survey articles, slides</li>
+      <li><span class="num">🎞️</span> PPTX — slide decks, survey decks</li>
+      <li><span class="num">📕</span> PDF — posters, slide decks via export</li>
+      <li><span class="num">🌳</span> Mermaid — mind map code</li>
+      <li><span class="num">📝</span> Markdown — review reports, TL;DR</li>
+    </ul>
+  </div>
+  <div class="mega-box">
+    <h2>⚙️ Tools & Scripts</h2>
+    <ul>
+      <li><span class="num">🔧</span> scripts/papercraft.py — Unified CLI for all 10 skills</li>
+      <li><span class="num">📋</span> scripts/batch_generate.py — One-click prompt dashboard</li>
+      <li><span class="num">✅</span> merge_deck.py — Quality gate + overlay + PPTX/PDF merge</li>
+      <li><span class="num">📐</span> merge_poster.py — Poster upscaling + print-ready PDF</li>
+      <li><span class="num">🔬</span> merge_survey.py — Comparison matrix assembler</li>
+      <li><span class="num">🤖</span> .github/workflows/ — CI: lint, structure, batch gen check</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p><a href="https://github.com/zsyggg/paper-craft-skills">github.com/zsyggg/paper-craft-skills</a> · MIT License</p>
+  <p style="margin-top:.3rem">From arxiv link to publication-ready output — drop a paper, pick a style, get expert-level results.</p>
+</footer>
+
+</div>
+</body>
+</html>

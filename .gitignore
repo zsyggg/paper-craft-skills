@@ -6,7 +6,10 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 ENV/
+env.bak/
+venv.bak/
 build/
 develop-eggs/
 dist/
@@ -45,3 +48,14 @@ tmp/
 
 # Generated files
 *.html
+
+# Output directories
+**/output/
+**/images/*.png
+**/images/*.jpg
+**/images/*.webp
+!**/references/**/*.png
+!examples/**/*.png
+
+# Notebook checkpoints
+.ipynb_checkpoints/

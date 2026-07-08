@@ -1,0 +1,96 @@
+/* Dark Mode Theme for paper-analyzer output */
+/* Add to any paper-analyzer HTML: <link rel="stylesheet" href="dark-mode.css"> or inline */
+
+:root {
+    --text: #e5e7eb;
+    --bg: #111827;
+    --accent: #60a5fa;
+    --muted: #9ca3af;
+    --border: #374151;
+    --code-bg: #1f2937;
+    --card-bg: #1f2937;
+    --hover: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--text);
+        background: var(--bg);
+    }
+    h2 { color: var(--accent); }
+    h3 { color: #d1d5db; }
+    blockquote {
+        background: #1e293b;
+        border-left-color: var(--accent);
+    }
+    pre, code {
+        background: var(--code-bg);
+        border-color: var(--border);
+    }
+    table th {
+        background: var(--code-bg);
+    }
+    table td, table th {
+        border-color: var(--border);
+    }
+    .summary-box, .highlight-box, .info-box {
+        background: linear-gradient(135deg, #1e293b, #1f2937);
+    }
+    a { color: #93c5fd; }
+    a:visited { color: #c4b5fd; }
+    .golden {
+        color: var(--accent);
+        border-top-color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+}
+
+/* Manual toggle support */
+body.dark-mode {
+    color: var(--text);
+    background: var(--bg);
+}
+body.dark-mode h2 { color: var(--accent); }
+body.dark-mode h3 { color: #d1d5db; }
+body.dark-mode blockquote {
+    background: #1e293b;
+    border-left-color: var(--accent);
+}
+body.dark-mode pre,
+body.dark-mode code {
+    background: var(--code-bg);
+    border-color: var(--border);
+}
+body.dark-mode table th { background: var(--code-bg); }
+body.dark-mode table td,
+body.dark-mode table th { border-color: var(--border); }
+body.dark-mode .summary-box {
+    background: linear-gradient(135deg, #1e293b, #1f2937);
+}
+body.dark-mode a { color: #93c5fd; }
+body.dark-mode .golden {
+    color: var(--accent);
+    border-top-color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.theme-toggle:hover {
+    background: var(--hover);
+    transform: scale(1.05);
+}
