@@ -1,0 +1,15 @@
+# paper-craft-skills dependencies
+# Install: pip install -r requirements.txt
+
+# Image processing (merge_deck.py, PDF generation)
+Pillow>=10.0.0
+
+# PPTX generation (merge_deck.py)
+python-pptx>=0.6.21
+
+# HTML generation (paper-analyzer scripts)
+# markdown>=3.4.0  # optional, for MD->HTML fallback
+
+# PDF text extraction (paper-analyzer, paper-survey)
+# pypdf2>=3.0.0   # optional
+# pymupdf>=1.23.0 # optional, for better PDF parsing

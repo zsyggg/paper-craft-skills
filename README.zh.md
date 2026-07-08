@@ -2,14 +2,14 @@
 
 [English](./README.md) | 中文
 
-**把学术论文变成精美的方法图解、高质感 AIGC 幻灯片和深度长文。零配置，一行命令。**
+**把学术论文变成精美的方法图解、高质感 AIGC 幻灯片、深度长文和多论文对比综述。零配置，一行命令。**
 
 <p align="center">
   <img src="examples/paper-illustrated/attention-is-all-you-need/transformer-overview-paper-figure.png" width="700" alt="基于 Attention Is All You Need 生成的 Transformer 架构图"/>
 </p>
 
 <p align="center">
-  输入 arxiv 链接，选择风格，输出像人类专家手笔的图解、PPT 和文章。
+  输入 arxiv 链接，选择风格，输出像人类专家手笔的图解、PPT、文章和综述。
 </p>
 
 ---
@@ -33,7 +33,7 @@ npx skills add zsyggg/paper-craft-skills
 
 ---
 
-## 三个技能
+## 四个技能
 
 <table>
 <tr>
@@ -98,6 +98,22 @@ npx skills add zsyggg/paper-craft-skills
 </td>
 <td width="50%" align="center" valign="top">
 
+### 🔬 paper-survey
+**多论文 → 对比综述** ✨ 全新
+
+<img src="images/hero_banner.png" width="380"/><br/>
+<sub>多篇论文 → 对比图解、综述幻灯片或深度对比长文</sub>
+
+<br/>
+
+逐篇分析 → 构建对比矩阵 → 三模式输出。
+
+| 模式 | 输出 |
+|------|------|
+| 🎨 comparison-figures | AIGC 对比图解 (PNG) |
+| 🎞️ survey-deck | 对比幻灯片 (PPTX/PDF) |
+| 📄 survey-article | 深度对比长文 (HTML) |
+
 </td>
 </tr>
 </table>
@@ -108,7 +124,7 @@ npx skills add zsyggg/paper-craft-skills
 
 `paper-deck` 可以把论文、文章或技术笔记变成一套有设计感的幻灯片。它会先生成 deck brief 和逐页大纲，再写可复现的视觉提示词，逐页生成 16:9 slide image，最后合成为 `.pptx` 和 `.pdf`。
 
-它很适合细节返修：每一页都有独立 prompt，所以你可以继续要求“第 5 页更像论文图”“第 8 页换成真实 benchmark 图”“保留布局但把封面换成玻璃质感”。
+它很适合细节返修：每一页都有独立 prompt，所以你可以继续要求"第 5 页更像论文图""第 8 页换成真实 benchmark 图""保留布局但把封面换成玻璃质感"。
 
 <p align="center">
   <img src="images/paper_deck_styles.png" width="640"/>
@@ -122,7 +138,7 @@ npx skills add zsyggg/paper-craft-skills
 | **warm-notes** | 温暖手记风讲解、课程、论文学习笔记 |
 | **liquid-glass** | Apple 式玻璃质感封面、章节页和高冲击视觉页 |
 
-它也支持真实素材。如果 PDF 里有好的论文图、表格、实验曲线或截图，skill 会先规划哪些页面应该使用真实素材、怎么裁切、放在第几页、用什么框架承载。真实图片可以被放进干净学术面板、证据区块或玻璃质感布局里，比完全凭空生成更可信。
+它也支持真实素材。如果 PDF 里有好的论文图、表格、实验曲线或截图，skill 会先规划哪些页面应该使用真实素材、怎么裁切、放在第几页、用什么框架承载。
 
 ```bash
 /paper-deck https://arxiv.org/abs/1706.03762
@@ -204,6 +220,26 @@ npx skills add zsyggg/paper-craft-skills
 /paper-analyzer https://arxiv.org/abs/1706.03762     # arxiv 链接
 /paper-analyzer /path/to/paper.pdf                     # 本地 PDF
 /paper-analyzer                                         # 然后粘贴文本
+```
+
+---
+
+## paper-survey — 多论文对比综述
+
+`paper-survey` 把 paper-craft-skills 的能力延伸到**多篇论文**。它会逐篇独立分析、构建结构化对比矩阵（5 维度：问题定义、方法路径、关键设计、实验表现、适用边界），然后三模式输出：
+
+| 模式 | 输出 | 适合 |
+|------|------|------|
+| **comparison-figures** | AIGC 对比图解 (PNG) | 快速看清差异、技术选型 |
+| **survey-deck** | 16:9 对比幻灯片 (PPTX/PDF) | 组会综述报告 |
+| **survey-article** | 深度对比长文 (HTML) | 文献综述写作 |
+
+每篇论文在所有输出中使用固定颜色，差异点视觉高亮，对比矩阵确保评估维度一致。
+
+```bash
+/paper-survey https://arxiv.org/abs/1706.03762 https://arxiv.org/abs/1907.04340
+/paper-survey --topic "Transformer 位置编码对比" --papers p1.pdf p2.pdf p3.pdf
+/paper-survey notes.md --format article
 ```
 
 ---
