@@ -1,0 +1,96 @@
+name: quality-check
+on:
+  push:
+    branches: [main, feat/**]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-merge-deck:
+    name: Check merge_deck.py
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Pillow python-pptx
+      - name: Lint with ruff
+        run: |
+          pip install ruff
+          ruff check scripts/ skills/*/scripts/ --ignore E501
+      - name: Check scripts importable
+        run: |
+          python -c "import sys; sys.path.insert(0, '.'); from skills.paper_deck.scripts.merge_deck import *; print('merge_deck OK')"
+          python -c "import sys; sys.path.insert(0, '.'); from skills.paper_poster.scripts.merge_poster import *; print('merge_poster OK')"
+
+  check-readme:
+    name: Check README structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check README exists
+        run: |
+          for f in README.md README.zh.md; do
+            test -f "$f" && echo "✓ $f exists" || echo "✗ $f missing"
+          done
+      - name: Check skill READMEs exist
+        run: |
+          for dir in skills/*/; do
+            name=$(basename "$dir")
+            if [ -f "${dir}README.md" ]; then
+              echo "✓ skills/$name/README.md"
+            else
+              echo "✗ skills/$name/README.md missing"
+            fi
+          done
+
+  check-examples:
+    name: Check example structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check example directories
+        run: |
+          for dir in examples/*/; do
+            name=$(basename "$dir")
+            readme="${dir}README.md"
+            if [ -f "$readme" ]; then
+              echo "✓ examples/$name/README.md"
+            else
+              echo "✗ examples/$name/README.md missing"
+            fi
+          done
+
+  check-batch-generate:
+    name: Check batch_generate.py
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test batch generate
+        run: |
+          python scripts/batch_generate.py --list
+          python scripts/batch_generate.py --html
+          test -f generation-dashboard.html && echo "✓ Dashboard generated"
+
+  check-file-sizes:
+    name: Check SKILL.md sizes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report skill sizes
+        run: |
+          echo "## SKILL.md sizes"
+          echo "| Skill | Size |"
+          echo "|-------|------|"
+          for sk in skills/*/SKILL.md; do
+            size=$(wc -c < "$sk")
+            name=$(echo "$sk" | cut -d/ -f2)
+            echo "| $name | $size bytes |"
+          done
