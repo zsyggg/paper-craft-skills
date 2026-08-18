@@ -217,4 +217,4 @@ MIT
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=zsyggg/paper-craft-skills&type=Date)](https://star-history.com/#zsyggg/paper-craft-skills&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=zsyggg/paper-craft-skills&type=Date)](https://star-history.dera.page/#zsyggg/paper-craft-skills&type=Date)
