@@ -168,6 +168,8 @@ Prompt 写法读取 `references/prompt-template.md`。
 2. 如果用户指定 `baoyu-imagine`、Gemini、OpenAI、Seedream 等后端，按用户指定。
 3. 如果没有可用生图后端，停止并告诉用户需要一个 raster image backend。
 
+> 🔒 **隐私提醒**：生图时，prompt（含论文内容摘要）和参考图会发送给所选生图后端的服务商（如 OpenAI、Google、字节等）。如果论文是**未公开稿件、在审稿件或含保密内容**，开始生图前必须先提醒用户这一点，并征得同意；用户不同意时，可改用本地/私有部署的生图后端，或只在 prompt 中使用已公开的信息。
+
 生图门禁：
 - 在调用任何生图工具之前，必须已经写好对应页的 `prompts/NN-*.md`。
 - 每一页最终进入 `images/` 的主图必须来自真实 raster image generation backend。
